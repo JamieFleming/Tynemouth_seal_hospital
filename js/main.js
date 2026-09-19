@@ -20,14 +20,14 @@ document.addEventListener('keydown', event => {
   }
 });
 const dialog = document.querySelector('#detail-dialog');
-function showDetail(title, paragraphs, image) {
+function showDetail(title, paragraphs, image, imageAlt = title) {
   document.querySelector('#dialog-title').textContent = title;
   const content = document.querySelector('#dialog-content');
   content.replaceChildren();
   if (image) {
     const photo = document.createElement('img');
     photo.src = image;
-    photo.alt = title;
+    photo.alt = imageAlt;
     content.append(photo);
   }
   paragraphs.forEach(text => {
@@ -42,41 +42,31 @@ dialog.addEventListener('click', event => {
   const rect = dialog.getBoundingClientRect();
   if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
 });
-const stories = {
-  Mabel: ['Mabel is recovering well and now rebuilding her strength, ready for release.'],
-  Brutus: ['On Sunday we released Brutus back into the wild! He showed his speed when he went back into the water.']
-};
-const helpContent = {
-  monthly: ['Become a monthly supporter', 'Regular support helps provide food, medicines and specialist care while our seals recover. A monthly donation link will be added here before the website launches.'],
-  supplies: ['Donate supplies', 'Help us get the supplies our seals need. Our wishlist link will be added here soon.'],
-  fundraise: ['Fundraise for our seals', 'Schools, businesses, birthdays and sponsored challenges can all make a difference. Fundraising information and contact details will be added here soon.'],
-  volunteer: ['Volunteer with us', 'Join our amazing team of volunteers and make an impact. Details of volunteering opportunities and how to apply will be added here soon.'],
-  corporate: ['Corporate support', 'Support equipment, rehabilitation or community projects. Partnership contact details will be added here soon.'],
-  share: ['Spread the word', 'Help people understand how to safely behave around wild seals. Share our advice: keep your distance, keep people and dogs away, and report concerns to British Divers Marine Life Rescue on 01825 765 546.']
-};
 document.addEventListener('click', event => {
   const button = event.target.closest('button');
   if (!button) return;
-  if (button.dataset.story) {
-    const name = button.dataset.story;
-    showDetail(`${name}’s story`, stories[name], `Images/${name === 'Mabel' ? 'Rehab_seal.png' : 'brutus.jpg'}`);
+  if (button.dataset.cardId) {
+    const collection = window.SealHospitalContent[button.dataset.cardCollection];
+    const item = collection?.find(entry => entry.id === button.dataset.cardId);
+    if (!item) return;
+    const title = item.name ? `${item.name}’s story` : (item.detailTitle || item.title);
+    const paragraphs = item.details?.length ? item.details : [item.summary];
+    showDetail(title, item.dateLabel ? [item.dateLabel, ...paragraphs] : paragraphs, item.image, item.imageAlt);
   }
-  if (button.dataset.update) {
-    const article = button.closest('article');
-    showDetail(article.querySelector('h3').textContent, [article.querySelector('time').textContent, article.querySelector('p').textContent]);
-  }
-  if (button.dataset.help) {
-    const [title, text] = helpContent[button.dataset.help];
-    showDetail(title, [text]);
+  if (button.dataset.help === 'monthly') {
+    showDetail('Become a monthly supporter', ['Regular support helps provide food, medicines and specialist care while our seals recover. A monthly donation link will be added here before the website launches.']);
   }
   if (button.dataset.collection) {
     const collections = {
-      patients: ['Our current patients', 'Mabel is recovering well and rebuilding her strength, ready for release. More patient profiles will be added here soon.'],
-      stories: ['Our seal stories', stories.Brutus[0]],
-      updates: ['Hospital updates', '8 March 2026 — International Women’s Day: celebrating our volunteers and remembering trustee and volunteer Roxy.', '5 March 2026 — World Book Day: celebrating marine wildlife books, including volunteer Alison’s book about Spud, ‘The Selfie Seal’.']
+      patients: ['Our current patients', 'patients'],
+      stories: ['Our seal stories', 'releases'],
+      updates: ['Hospital updates', 'updates']
     };
-    const [title, ...paragraphs] = collections[button.dataset.collection];
-    showDetail(title, paragraphs);
+    const [title, key] = collections[button.dataset.collection];
+    const paragraphs = window.SealHospitalContent[key].map(item =>
+      `${item.name || item.title}${item.dateLabel ? ` — ${item.dateLabel}` : ''}: ${item.summary}`
+    );
+    showDetail(title, paragraphs.length ? paragraphs : ['More information will be added soon.']);
   }
   if (button.dataset.policy) {
     const policies = {
