@@ -94,8 +94,13 @@
     if (collection === 'patients' || collection === 'releases') {
       container.tabIndex = 0;
       container.setAttribute('role', 'region');
-      container.setAttribute('aria-label', `${collection === 'patients' ? 'Current patients' : 'Recent releases'} — scroll for more seals`);
+      container.setAttribute('aria-label', `${collection === 'patients' ? 'Current patients' : 'Released seals'} — scroll for more seals`);
     }
-    container.replaceChildren(...content[collection].map(item => renderers[collection](item, collection)));
+    const limit = Number.parseInt(container.dataset.limit, 10);
+    const items = Number.isInteger(limit) && limit > 0
+      ? content[collection].slice(0, limit)
+      : content[collection];
+    container.style.setProperty('--card-count', String(Math.max(1, Math.min(items.length, 3))));
+    container.replaceChildren(...items.map(item => renderers[collection](item, collection)));
   });
 })();

@@ -75,3 +75,15 @@ To display three selected posts instead, populate `facebook.posts` in `js/conten
 Automatically displaying exactly the latest three posts in custom cards requires a supported feed provider or a server-side Meta API connection with the appropriate Page authorization. No credentials or access tokens belong in `content.js` or other public frontend files. The current project has no such connection.
 
 Facebook embeds may use third-party cookies. The preview notices now mention this service; review production consent handling before launch. DOM checks cover timeline/post selection, the three-post cap, URL validation and fallback links; they do not verify Facebook's external availability.
+
+### Extra seal photographs
+
+A seal can optionally include `gallery: [{ src: "Images/kraken_2.jpg", alt: "Description of the photograph" }]` in its content record. The main `image` remains the homepage photograph and first modal image. Gallery entries become keyboard-accessible thumbnail buttons underneath the modal photograph. Add further entries to add photos; omit `gallery` for a single-photo story. Kraken includes two additional photographs.
+
+### Update articles with guidance and posters
+
+Updates can include `sections` (each with `title`, optional `paragraphs`, and optional bullet-list `items`) and `posters` (each with `src`, `alt`, and `caption`). The modal renders this material after the article text. Posters retain their complete aspect ratio and link to full-size originals. The nurdling article dated 28 August 2026 demonstrates this structure. Its local clean-up guidance is based on the supplied posters; no unprovided WhatsApp invite or drop-off address has been invented.
+
+### Homepage limits and full seal collections
+
+Homepage patient/release containers use `data-limit="3"` and show the first three records in their existing content order. One or two cards are centred on desktop at the usual three-column card width. The homepage buttons link to `seals.html`, which renders every patient and release from the same content file and supports the same story dialogs and galleries. Its mobile view stacks all profiles for browsing. Keep both pages and their versioned CSS/JS references updated when deploying changes.

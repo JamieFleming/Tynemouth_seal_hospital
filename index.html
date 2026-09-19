@@ -11,15 +11,16 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" />
-		<link rel="stylesheet" href="css/style.css?v=09558e56d89b" />
-		<script src="js/content.js?v=8582170644b4" defer></script><script src="js/components.js?v=8e1c96b29e43" defer></script><script src="js/main.js?v=97ccf8a8ca46" defer></script><script src="js/facebook.js?v=53881b20fcad" defer></script>
+		<link rel="stylesheet" href="css/style.css?v=a14f42436ac0" />
+		<script src="js/content.js?v=05b77253ddcc" defer></script><script src="js/components.js?v=c5c1a6d45606" defer></script><script src="js/main.js?v=60c61dcaf4d8" defer></script><script src="js/facebook.js?v=53881b20fcad" defer></script>
 	</head>
 	<body>
 		<svg
 			class="svg-library"
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true">
-			<symbol id="icon-heart" viewBox="0 0 24 24">
+			<symbol id="icon-shirt" viewBox="0 0 24 24"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4a4 4 0 0 1-8 0Z" /></symbol>
+<symbol id="icon-heart" viewBox="0 0 24 24">
 				<path
 					d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
 			</symbol>
@@ -246,14 +247,14 @@
 						<p class="eyebrow">Currently at the hospital</p>
 						<h2>Meet our current patients</h2>
 					</div>
-					<div class="seal-grid" data-cards="patients"></div>
+					<div class="seal-grid" data-cards="patients" data-limit="3"></div>
 					<p class="section-action">
-						<button class="button button-slate" data-collection="patients">
+						<a class="button button-slate" href="seals.html#patients">
 							All our patients
 							<svg class="icon" aria-hidden="true">
 								<use href="#icon-arrow" />
 							</svg>
-						</button>
+						</a>
 					</p>
 				</div>
 			</section>
@@ -290,16 +291,16 @@
 				<div class="container">
 					<div class="section-heading">
 						<p class="eyebrow">Seal stories</p>
-						<h2>Recent releases</h2>
+						<h2>Back in the wild</h2>
 					</div>
-					<div class="seal-grid" data-cards="releases"></div>
+					<div class="seal-grid" data-cards="releases" data-limit="3"></div>
 					<div class="section-action">
-						<button class="button button-slate" data-collection="stories">
+						<a class="button button-slate" href="seals.html#stories">
 							View all stories
 							<svg class="icon" aria-hidden="true">
 								<use href="#icon-arrow" />
 							</svg>
-						</button>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -367,8 +368,10 @@
 							</svg>
 							Become a monthly supporter
 						</button>
-						<p class="payment-note">
-							Donation preview · payment link coming soon
+						<p class="justgiving-note">You can also <a href="https://www.justgiving.com/charity/tynemouthsealhospital" target="_blank" rel="noopener noreferrer">donate directly on JustGiving ↗</a>.</p>
+                        <p class="payment-note">
+							<svg class="icon" aria-hidden="true"><use href="#icon-lock" /></svg>
+							Secure payments
 						</p>
 					</form>
 				</div>
@@ -385,7 +388,7 @@
 			<div class="container">
 				<div class="footer-grid">
 					<div class="footer-about">
-						<picture><source media="(max-width: 640px)" srcset="Images/logo.png" /><img
+						<picture><source media="(max-width: 640px)" srcset="Images/logo_white.png" /><img
 							src="Images/logo_white.png"
 							alt="Tynemouth Seal Hospital"
 							loading="lazy"
