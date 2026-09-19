@@ -72,6 +72,15 @@ document.addEventListener("click", (event) => {
 			item.image,
 			item.imageAlt,
 		);
+        if (item.source) {
+            const source = document.createElement('a');
+            source.className = 'profile-source';
+            source.href = item.source.url;
+            source.target = '_blank';
+            source.rel = 'noopener noreferrer';
+            source.textContent = item.source.label;
+            document.querySelector('#dialog-content').append(source);
+        }
 		if (item.sections?.length || item.posters?.length) {
 			dialog.classList.add("article-dialog");
 			const content = document.querySelector("#dialog-content");

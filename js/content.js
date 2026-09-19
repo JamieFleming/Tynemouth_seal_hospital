@@ -4,6 +4,29 @@
  * The repeated seal profiles are editable placeholders from the design.
  */
 window.SealHospitalContent = {
+  sealStories: [
+  {
+    "id": "xana-shower",
+    "title": "A shower and a little confidence",
+    "summary": "Xana’s favourite hose shower is a small moment in a much bigger recovery journey. Open her story to find the video.",
+    "collection": "patients",
+    "recordId": "patients-1"
+  },
+  {
+    "id": "kraken-character",
+    "title": "Small seal. Big personality.",
+    "summary": "Meet inquisitive Kraken and explore the photographs from his time in care.",
+    "collection": "patients",
+    "recordId": "patients-2"
+  },
+  {
+    "id": "isla-return",
+    "title": "A familiar yellow tag",
+    "summary": "Years after release, Isla’s tag helped identify a welcome returning visitor at St Mary’s Island.",
+    "collection": "releases",
+    "recordId": "releases-1"
+  }
+],
   about: [
   {
     "id": "behind-the-scenes",
@@ -540,6 +563,106 @@ window.SealHospitalContent = {
 				},
 			],
 		},
+{
+  "id": "minnie-tweety-2026",
+  "name": "Minnie Mouse & Tweety-Pie",
+  "species": "Grey seals",
+  "image": "Images/tweety_and_minnie_release_6.jpg",
+  "imageAlt": "One of the two grey seals resting on the beach during Minnie Mouse and Tweety-Pie’s release",
+  "summary": "Originally rescued by Blyth Wildlife Rescue, Minnie Mouse and Tweety-Pie came to us for the final stage of their recovery. Both girls are now back in the wild.",
+  "readLabel": "Read their release story",
+  "dateLabel": "Released the weekend before 19 March",
+  "details": [
+    "Minnie Mouse and Tweety-Pie were originally rescued by Blyth Wildlife Rescue. The two female grey seals then came to Tynemouth Seal Hospital for the final part of their rehabilitation.",
+    "The hospital’s Facebook post on 19 March announced that both girls had been released together over the previous weekend. The photographs capture their journey from the transport crates on the shore to their return to the sea.",
+    "The Aquarium’s release report records Tweety-Pie arriving at the hospital at 28kg and leaving at 38.5kg. Minnie Mouse increased from 30kg to 42.36kg.",
+    "Minnie headed for the waves first, with Tweety-Pie following back into the sea. Tynemouth Aquarium published a further account on 25 March 2026; this is the article date, not their release date."
+  ],
+  "source": {
+    "label": "Additional release details: Tynemouth Aquarium, 25 March 2026",
+    "url": "https://www.tynemouthaquarium.co.uk/blog/animal-stories/double-seal-release/"
+  },
+  "gallery": [
+    {
+      "src": "Images/tweety_and_minnie_release_3.jpg",
+      "alt": "The team carrying a seal transport crate down to the shore"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_1.jpg",
+      "alt": "A volunteer preparing a seal transport crate on the shore"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_2.jpg",
+      "alt": "A seal transport crate set beside the sea before release"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_4.jpg",
+      "alt": "A grey seal waiting in a transport crate at the release site"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_5.jpg",
+      "alt": "A grey seal looking out of its open transport crate"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_9.jpg",
+      "alt": "A grey seal resting beside the open transport crates"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_7.jpg",
+      "alt": "One of the released grey seals entering the shallow sea"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_8.jpg",
+      "alt": "One of the released grey seals swimming in the sea"
+    },
+    {
+      "src": "Images/tweety_and_minnie_release_10.jpg",
+      "alt": "Waves washing over the rocky shoreline during the release"
+    }
+  ],
+  "sex": "Female"
+},
+{
+  "id": "sylvester-release",
+  "name": "Sylvester",
+  "species": "Seal",
+  "sex": "Male",
+  "image": "Images/sylvester_3.jpg",
+  "imageAlt": "Sylvester looking out beside his transport crate on release day",
+  "summary": "Rescued and cared for by Blyth Wildlife Rescue, Sylvester finished his rehabilitation with us before returning to the wild on 21 February, weighing over 44kg.",
+  "dateLabel": "Released 21 February",
+  "details": [
+    "Sylvester was rescued by Blyth Wildlife Rescue and looked after by their team before coming to Tynemouth Seal Hospital for the final stage of his rehabilitation.",
+    "The team released him back into the wild on 21 February. At a release weight of over 44kg, he had certainly made the most of the fish supplied by Tynemouth Aquarium.",
+    "His release photographs follow the journey from the transport crate on the beach to his return to the waves."
+  ],
+  "gallery": [
+    {
+      "src": "Images/sylvester_1.jpg",
+      "alt": "The team carrying Sylvester’s transport crate down the beach"
+    },
+    {
+      "src": "Images/sylvester_2.jpg",
+      "alt": "Sylvester leaving his transport crate on the sand"
+    },
+    {
+      "src": "Images/sylvester_4.jpg",
+      "alt": "Sylvester entering the water at the edge of the beach"
+    },
+    {
+      "src": "Images/sylvester_5.jpg",
+      "alt": "Sylvester moving into the surf"
+    },
+    {
+      "src": "Images/sylvester_6.jpg",
+      "alt": "Sylvester’s tagged flipper visible as he heads into the waves"
+    },
+    {
+      "src": "Images/sylvester_7.jpg",
+      "alt": "Sylvester swimming in the sea after his release"
+    }
+  ]
+},
 	],
 	updates: [
 {

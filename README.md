@@ -102,3 +102,14 @@ Hospital information was checked against:
 The two Aquarium pages give different pen counts, so capacity is not stated. Dated rescue totals and current staffing totals are also omitted. Team biographical information comes from the supplied posters; the Isla account comes from the supplied story. Source links are included in the relevant About page sections.
 
 Validation: all three pages initialise without script errors in DOM checks; all ten team modals display their text and posters; image paths, navigation/fragment links, menu behaviour and CSS parsing pass. Browser visual verification was not available in this session.
+
+## Expanded Our Seals page
+
+`seals.html` now contains a page hero, current patients, curated seal stories, a complete release collection and support/advice CTAs. `data-variant="expanded"` selects large photo-led profiles with previews from the existing details; the homepage still uses compact cards and its three-record limit. `sealStories` stores short feature headings and references existing patient/release records by `collection` and `recordId`, so photos and modal stories stay in sync.
+
+Facebook access was blocked during research, so no new current-patient status was inferred. The additional Minnie Mouse and Tweety Pie release was verified from the Aquarium's report, published 25 March 2026:
+https://www.tynemouthaquarium.co.uk/blog/animal-stories/double-seal-release/
+
+Four release photographs were downloaded from that article to `Images/minnie-tweety-release-1.jpg` through `-4.jpg`. The record credits and links to the Aquarium on the full profile and in its modal. Individual seals are not identified in the image captions because the source does not specify which is pictured. The publication date is labelled as a report date, not an exact release date.
+
+Checks cover expanded and compact rendering, all profile/story controls, the new four-photo gallery, attribution, image paths, and cross-page anchors. Actual browser rendering remains unverified in this environment.

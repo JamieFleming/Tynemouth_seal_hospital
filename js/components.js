@@ -48,7 +48,7 @@
     return control;
   }
 
-  function sealCard(item, collection) {
+  function sealCard(item, collection, variant) {
     const card = element('article', `seal-card${collection === 'releases' ? ' release-card' : ''}`);
     const photo = element('img');
     photo.src = item.image;
@@ -59,9 +59,28 @@
     const body = element('div');
     const tags = element('p', 'tags');
     const sexClass = { Female: 'female', Male: 'male' }[item.sex] || '';
-    tags.append(element('span', '', item.species), element('span', sexClass, item.sex));
+    tags.append(element('span', '', item.species));
+    if (item.sex) tags.append(element('span', sexClass, item.sex));
     body.append(element('h3', '', item.name), tags, element('p', '', item.summary),
-      action(item, collection, `Read ${item.name}’s story`));
+      action(item, collection, item.readLabel || `Read ${item.name}’s story`));
+    if (variant === 'expanded') {
+      card.classList.add('seal-profile');
+      body.classList.add('seal-profile-body');
+      body.prepend(element('p', 'eyebrow', collection === 'patients' ? 'In rehabilitation' : 'Released into the wild'));
+      const control = body.querySelector('button, a');
+      control.className = 'button button-coral';
+      if (item.dateLabel) body.insertBefore(element('p', 'profile-date', item.dateLabel), control);
+      const preview = element('div', 'profile-preview');
+      (item.details || []).slice(0, 2).forEach(text => preview.append(element('p', '', text)));
+      body.insertBefore(preview, control);
+      if (item.source) {
+        const source = element('a', 'profile-source', item.source.label);
+        source.href = item.source.url;
+        source.target = '_blank';
+        source.rel = 'noopener noreferrer';
+        body.append(source);
+      }
+    }
     card.append(photo, body);
     return card;
   }
@@ -103,7 +122,24 @@
     return card;
   }
 
-  const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard, team: teamCard };
+  function sealStoryCard(item) {
+    const record = content[item.collection]?.find(entry => entry.id === item.recordId);
+    if (!record) return document.createDocumentFragment();
+    const card = element('article', 'seal-moment');
+    const photo = element('img');
+    photo.src = record.image;
+    photo.alt = record.imageAlt;
+    photo.loading = 'lazy';
+    photo.width = 600;
+    photo.height = 450;
+    const body = element('div');
+    body.append(element('h3', '', item.title), element('p', '', item.summary),
+      action(record, item.collection, `Explore ${record.name}’s story`));
+    card.append(photo, body);
+    return card;
+  }
+
+  const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard, team: teamCard, sealStories: sealStoryCard };
   document.querySelectorAll('[data-cards]').forEach(container => {
     const collection = container.dataset.cards;
     if (collection === 'patients' || collection === 'releases') {
@@ -116,6 +152,6 @@
       ? content[collection].slice(0, limit)
       : content[collection];
     container.style.setProperty('--card-count', String(Math.max(1, Math.min(items.length, 3))));
-    container.replaceChildren(...items.map(item => renderers[collection](item, collection)));
+    container.replaceChildren(...items.map(item => renderers[collection](item, collection, container.dataset.variant)));
   });
 })();
