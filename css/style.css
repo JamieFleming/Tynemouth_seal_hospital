@@ -1349,3 +1349,227 @@ body:has(dialog[open]) {
  .book-feature .button, .fun-card .button { width: 100%; }
  .fun-card > img { max-height: 380px; }
 }
+
+/* Support page: clear routes to donations, supplies and the external shop. */
+.support-hero { padding: 60px 0; color: var(--pale); background: linear-gradient(115deg, var(--deep), var(--teal)); }
+.support-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: center; }
+.support-hero h1 { font-size: clamp(40px, 5vw, 70px); line-height: 1.1; letter-spacing: -1.8px; }
+.support-hero h1 span, .support-hero .eyebrow { color: var(--mint); }
+.support-hero p:not(.eyebrow) { font-size: 18px; max-width: 540px; margin: 25px 0; }
+.support-hero .button-row { flex-wrap: wrap; }
+.support-hero figure { margin: 0; }
+.support-hero img { width: 100%; height: 420px; object-fit: cover; border-radius: 80px 20px 20px; }
+.support-hero figcaption { margin-top: 12px; color: var(--mint); font-size: 12px; }
+.support-page .section-heading > p:not(.eyebrow) { color: var(--slate); max-width: 670px; margin: 18px auto 0; }
+.support-donations { background: var(--pale); }
+.donation-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.donation-feature h2 { font-size: clamp(32px, 3.5vw, 48px); line-height: 1.2; }
+.donation-feature > div > p:not(.eyebrow) { margin: 24px 0; }
+.donation-benefits { padding-left: 22px; margin: 26px 0; }
+.donation-benefits li { padding-left: 5px; margin: 14px 0; }
+.donation-benefits li::marker { color: var(--ocean); }
+.giving-card { padding: 40px; border: 1px solid var(--line); border-radius: 24px; text-align: center; background: var(--white); box-shadow: 0 12px 38px rgb(7 59 69 / 7%); }
+.giving-card > .icon { width: 44px; height: 44px; color: var(--coral); margin-bottom: 14px; }
+.giving-card h3 { font-size: 36px; line-height: 1.2; }
+.giving-card > .button { width: 100%; min-height: 56px; font-size: 17px; }
+.giving-card .giving-note, .wishlist-card .giving-note { font-size: 13px; color: var(--slate); margin: 16px 0 24px; }
+.giving-recurring { border-top: 1px solid var(--line); padding-top: 24px; }
+.giving-recurring h4 { font-size: 18px; }
+.giving-recurring p { margin: 12px 0; font-size: 14px; color: var(--slate); }
+.giving-card .giving-secure { display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; color: var(--slate); margin-bottom: 0 !important; }
+.giving-secure .icon { width: 16px; height: 16px; flex-shrink: 0; }
+.supplies-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 65px; align-items: center; }
+.supplies-layout h3 { font-size: 28px; margin-bottom: 18px; }
+.supply-list { padding: 0; list-style: none; margin: 28px 0; }
+.supply-list li { padding: 18px 0; border-top: 1px solid var(--line); }
+.supply-list strong { display: block; color: var(--deep); margin-bottom: 6px; }
+.supply-list span, .supply-note { color: var(--slate); font-size: 14px; }
+.wishlist-card { border-radius: 22px; padding: 36px; background: var(--sand); }
+.wishlist-card > .icon { width: 44px; height: 44px; color: var(--ocean); margin-bottom: 18px; }
+.wishlist-card > p:not(.eyebrow) { margin: 22px 0; }
+.wishlist-card .button { width: 100%; white-space: normal; }
+.support-shop { background: var(--pale); }
+.merch-grid, .involvement-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.merch-card { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--white); display: flex; flex-direction: column; }
+.merch-art { background: var(--sand); display: grid; place-items: center; height: 185px; color: var(--ocean); }
+.merch-card:nth-child(2) .merch-art { background: var(--mint); }
+.merch-card:nth-child(3) .merch-art { background: var(--deep); color: var(--mint); }
+.merch-art .icon { width: 76px; height: 76px; stroke-width: 1; }
+.merch-body { padding: 28px; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.merch-body h3 { font-size: 26px; line-height: 1.25; }
+.merch-body p:not(.eyebrow) { color: var(--slate); margin: 18px 0; }
+.merch-body .text-link { margin-top: auto; min-height: 44px; }
+.shop-more { display: flex; justify-content: space-between; align-items: center; gap: 30px; border-top: 1px solid var(--line); margin-top: 36px; padding-top: 30px; }
+.shop-more h3 { font-size: 22px; }
+.shop-more p { margin-top: 10px; color: var(--slate); }
+.shop-more .button { flex-shrink: 0; }
+.involvement-grid article { padding: 28px; border: 1px solid var(--line); border-radius: 18px; }
+.involvement-grid .icon { width: 36px; height: 36px; color: var(--ocean); margin-bottom: 18px; }
+.involvement-grid h3 { font-size: 23px; }
+.involvement-grid p { margin: 18px 0; color: var(--slate); }
+.support-page .text-link { min-height: 44px; }
+.support-hero-grid > *, .donation-feature > *, .supplies-layout > * { min-width: 0; }
+@media (max-width: 1000px) {
+ .support-hero-grid, .donation-feature, .supplies-layout { gap: 32px; }
+ .giving-card, .wishlist-card { padding: 28px; }
+ .merch-body, .involvement-grid article { padding: 22px; }
+ .merch-grid, .involvement-grid { gap: 16px; }
+}
+@media (max-width: 760px) {
+ .support-hero { padding: 36px 0; }
+ .support-hero-grid, .donation-feature, .supplies-layout, .merch-grid, .involvement-grid { grid-template-columns: minmax(0, 1fr); }
+ .support-hero h1 { font-size: clamp(36px, 9vw, 54px); letter-spacing: -1px; }
+ .support-hero img { height: 300px; border-top-left-radius: 55px; }
+ .support-hero p:not(.eyebrow) { font-size: 16px; }
+ .support-hero .button-row, .support-page .about-support .button-row { flex-direction: column; }
+ .giving-card h3 { font-size: 31px; }
+ .shop-more { flex-direction: column; align-items: stretch; }
+ .merch-art { height: 150px; }
+ .merch-body .text-link { width: 100%; }
+}
+
+.support-fundraising { background: var(--sand); }
+.fundraising-ideas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.fundraising-ideas article, .corporate-options article { padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+.fundraising-ideas h3, .corporate-options h3 { font-size: 23px; line-height: 1.3; }
+.fundraising-ideas p, .corporate-options p { margin-top: 16px; color: var(--slate); }
+.support-callout { background: var(--white); border-radius: 20px; padding: 32px; margin: 32px 0 48px; }
+.support-callout h3, .past-fundraisers > h3 { font-size: 28px; }
+.support-callout p { max-width: 800px; margin: 18px 0 24px; }
+.support-callout .button-row { flex-wrap: wrap; }
+.past-fundraisers > p { margin: 14px 0 26px; color: var(--slate); }
+.past-event-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+.past-event-grid article { border-top: 2px solid var(--ocean); padding-top: 22px; }
+.past-event-grid h4 { font-size: 22px; }
+.past-event-grid p:not(.eyebrow) { margin: 16px 0; }
+.support-split { display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; }
+.support-split > * { min-width: 0; }
+.support-split figure { margin: 0; }
+.support-split figure img { width: 100%; max-height: 620px; height: auto; object-fit: cover; border-radius: 22px; }
+.support-split figcaption { margin-top: 12px; font-size: 13px; color: var(--slate); }
+.support-split h2 { font-size: clamp(32px, 3.5vw, 44px); line-height: 1.2; }
+.support-split p:not(.eyebrow) { margin: 22px 0; }
+.support-bullet-list { padding-left: 22px; }
+.support-bullet-list li { margin: 12px 0; }
+.support-split .button-row { flex-wrap: wrap; }
+#corporate { background: var(--pale); }
+.corporate-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.support-small { font-size: 13px; color: var(--slate); margin-top: 16px; }
+.share-panel { padding: 36px; background: var(--pale); border-radius: 22px; }
+.share-panel h3, .share-resources h3 { font-size: 27px; }
+.share-panel > p, .share-resources p { margin: 16px 0 24px; }
+.share-panel .button-row { flex-wrap: wrap; }
+.share-url-label { display: block; font-weight: 700; font-size: 14px; margin: 24px 0 8px; }
+#share-url { display: block; width: 100%; max-width: 650px; padding: 14px; border: 1px solid var(--slate); border-radius: 8px; font: inherit; color: var(--deep); background: var(--white); }
+.social-follow { display: flex; flex-wrap: wrap; gap: 16px 28px; border-top: 1px solid var(--line); padding-top: 20px; }
+.share-resources { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; margin-top: 40px; }
+.poster-downloads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.poster-downloads img { width: 100%; height: auto; display: block; border-radius: 12px; }
+.poster-downloads span { display: block; padding: 14px 0; color: var(--ocean); font-size: 14px; font-weight: 700; }
+@media (max-width: 1000px) {
+ .fundraising-ideas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .support-split { gap: 32px; }
+ .corporate-options { gap: 16px; }
+ .corporate-options article { padding: 22px; }
+}
+@media (max-width: 760px) {
+ .fundraising-ideas, .past-event-grid, .support-split, .corporate-options, .share-resources { grid-template-columns: minmax(0, 1fr); }
+ .support-callout, .share-panel { padding: 24px; }
+ .share-panel .button-row, .support-callout .button-row { flex-direction: column; }
+ .support-split figure img { max-height: 400px; object-position: center 35%; }
+ .poster-downloads { gap: 12px; }
+ .share-resources { gap: 30px; }
+}
+
+/* Contact: accessible enquiries and location details side by side. */
+.contact-hero { background: linear-gradient(110deg, var(--deep), var(--teal)); padding: 65px 0; color: var(--pale); }
+.contact-hero .eyebrow, .contact-hero h1 span { color: var(--mint); }
+.contact-hero h1 { font-size: clamp(42px, 5vw, 70px); line-height: 1.1; letter-spacing: -1.5px; }
+.contact-hero p:not(.eyebrow) { max-width: 650px; margin-top: 25px; font-size: 18px; }
+.contact-urgent { background: var(--sand); padding: 28px 0; }
+.contact-urgent > .container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.contact-urgent h2 { font-size: 23px; }
+.contact-urgent p { margin-top: 12px; max-width: 730px; font-size: 15px; }
+.contact-urgent .button { flex-shrink: 0; }
+.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 75px; align-items: start; }
+.contact-information h2 { font-size: clamp(34px, 3.8vw, 48px); line-height: 1.2; }
+.contact-information > p:not(.eyebrow) { margin: 24px 0; color: var(--slate); }
+.contact-methods { margin: 32px 0; }
+.contact-methods dt { font-weight: 700; font-size: 14px; margin-top: 24px; }
+.contact-methods dd { margin: 7px 0 0; overflow-wrap: anywhere; }
+.contact-methods a { color: var(--ocean); text-decoration: underline; text-underline-offset: 4px; display: inline-block; padding: 6px 0; }
+.contact-methods dd span { display: block; font-size: 13px; color: var(--slate); }
+.contact-visit-note { background: var(--pale); padding: 26px; border-radius: 18px; }
+.contact-visit-note h3 { font-size: 23px; }
+.contact-visit-note p { margin: 16px 0; }
+.contact-form-card { padding: 38px; border: 1px solid var(--line); background: var(--white); border-radius: 24px; }
+.contact-form-card h2 { font-size: 30px; }
+.contact-form-card > p { font-size: 14px; color: var(--slate); margin: 12px 0 26px; }
+.contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+.form-field { margin-bottom: 22px; min-width: 0; }
+.form-field label { display: block; font-weight: 700; margin-bottom: 9px; font-size: 15px; }
+.form-field .optional { color: var(--slate); font-weight: 400; font-size: 13px; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 12px; border: 1px solid var(--slate); border-radius: 8px; font: inherit; background: var(--paper); color: var(--ink); }
+.form-field textarea { resize: vertical; min-height: 170px; }
+.form-field :is(input, select, textarea):focus { outline: 3px solid var(--aqua); outline-offset: 3px; }
+.field-help, .form-privacy { font-size: 13px; color: var(--slate); line-height: 1.6; }
+.field-help { margin-top: 8px; }
+.form-privacy { margin: 20px 0; }
+.form-honeypot { display: none; }
+#contact-submit { width: 100%; min-height: 52px; }
+#contact-submit:disabled { opacity: .7; cursor: wait; }
+.contact-status { margin-top: 18px; font-size: 14px; border-radius: 8px; }
+.contact-status:empty { margin: 0; }
+.contact-status[data-state="success"] { padding: 16px; background: var(--pale); color: var(--deep); }
+.contact-status[data-state="error"] { padding: 16px; border: 1px solid var(--coral-dark); background: var(--sand); color: var(--ink); }
+.contact-location { background: var(--pale); }
+.location-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 45px; align-items: start; }
+.location-address h3 { font-size: 25px; }
+.location-address address { font-style: normal; line-height: 1.8; margin: 22px 0; }
+.location-address p { color: var(--slate); margin: 20px 0; }
+.location-address .text-link { display: flex; min-height: 44px; margin-top: 16px; }
+.location-map iframe { display: block; width: 100%; height: 480px; border: 0; border-radius: 20px; background: var(--line); }
+.map-note { font-size: 12px; margin-top: 14px; color: var(--slate); }
+.contact-layout > *, .location-grid > * { min-width: 0; }
+@media (max-width: 1000px) {
+ .contact-layout { gap: 35px; }
+ .contact-form-card { padding: 26px; }
+ .contact-urgent > .container { align-items: flex-start; flex-direction: column; gap: 22px; }
+ .location-grid { gap: 28px; }
+}
+@media (max-width: 760px) {
+ .contact-hero { padding: 40px 0; }
+ .contact-hero p:not(.eyebrow) { font-size: 16px; }
+ .contact-layout, .location-grid, .contact-fields { grid-template-columns: minmax(0, 1fr); }
+ .contact-information h2 br { display: none; }
+ .contact-urgent .button { width: 100%; }
+ .contact-form-card { padding: 24px; }
+ .location-map iframe { height: 340px; }
+}
+
+/* Featured clothing first, followed by four smaller shop collections. */
+.merch-product-image { background: var(--white); padding: 20px; }
+.merch-product-image img { display: block; width: 100%; height: 300px; object-fit: contain; }
+.merch-secondary { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 28px; gap: 20px; }
+.merch-secondary .merch-product-image { padding: 16px; }
+.merch-secondary .merch-product-image img { height: 200px; }
+.merch-secondary .merch-body { padding: 22px; }
+.merch-secondary h3 { font-size: 23px; }
+.merch-secondary p { font-size: 14px; }
+@media (max-width: 1000px) {
+ .merch-product-image img { height: 245px; }
+ .merch-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+ .merch-featured { grid-template-columns: minmax(0, 1fr); }
+ .merch-product-image img { height: 290px; }
+ .merch-secondary { gap: 14px; }
+ .merch-secondary .merch-product-image { padding: 10px; }
+ .merch-secondary .merch-product-image img { height: 160px; }
+ .merch-secondary .merch-body { padding: 16px; }
+ .merch-secondary h3 { font-size: 20px; }
+}
+@media (max-width: 380px) {
+ .merch-secondary { grid-template-columns: minmax(0, 1fr); }
+ .merch-secondary .merch-product-image img { height: 220px; }
+}

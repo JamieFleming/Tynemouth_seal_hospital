@@ -121,3 +121,21 @@ Checks cover expanded and compact rendering, all profile/story controls, the new
 The `fun` collection contains the life advice and secretly-a-seal features, with readable text and the complete original poster series in their dialogs. The book corner opens the shared `books` update. Release highlights reference existing seal records via `data-records` on the Updates page, so their stories stay consistent with Our Seals.
 
 The Facebook section uses the same public embed and direct-page fallback as the homepage; availability depends on Facebook and the visitor’s browser settings. After editing shared CSS or JavaScript, refresh the `?v=` asset versions on all four pages before publishing to GitHub Pages.
+
+### Support page
+
+`support.html` includes a JustGiving donation feature, supplies guidance, the Amazon wishlist link, and Teemill collection cards. Payments and orders take place on those external services. Supply categories are examples, not a verified inventory of current requests; check the live wishlist before replacing these with specific products. Amazon and Teemill blocked automated retrieval during implementation, so no live embed, prices, stock or product photographs are claimed. Merchandise cards link to the supplied mugs, tote bags and baseball long-sleeved tee collections; hoodies and sweatshirts use the main shop link until confirmed collection URLs are supplied.
+
+Include `support.html` when refreshing shared asset version links or publishing the site.
+
+Support page additions: seven Teemill collections (duplicate supplied URLs are shown only once), six fundraising ideas, past events, volunteering, corporate equipment/project enquiries, and sharing resources. Contact email `tynemouthsh@gmail.com` comes from the Charity Commission contact listing: https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5191750/contact-information . The 2023 pop-up is sourced to the aquarium’s Summer 2023 event listing, linked directly in the page. Past events are explicitly labelled and do not claim attendance or fundraising totals.
+
+`js/support.js` uses native sharing when available, then clipboard copying, then a selectable URL if clipboard access fails. The shared URL is the published GitHub Pages homepage, never localhost. The Instagram button currently opens Instagram itself; replace it with the hospital’s profile once confirmed. Awareness-poster downloads use the existing nurdles images.
+
+### Contact page
+
+`contact.html` posts to the supplied Formspree endpoint `https://formspree.io/f/mjykgygr`. Required fields: name, email, enquiry category and message. Phone and organisation are optional. `js/contact.js` adds AJAX success/error feedback, prevents duplicate submissions while sending, preserves entries after failures, and accepts a known `?topic=` value for enquiries arriving from Support Us. Native POST remains available without JavaScript. Tests use mocked responses only; inbox delivery and Formspree account configuration have not been verified by sending a real enquiry.
+
+The map uses a standard Google Maps embed for Tynemouth Aquarium, Grand Parade, NE30 4JF, with the address alongside it and a direct Maps fallback link. It marks the aquarium site, not an unverified hospital entrance. No API key was supplied. To switch to the Maps Embed API, enable that API and replace the iframe URL with `https://www.google.com/maps/embed/v1/place?key=YOUR_RESTRICTED_BROWSER_KEY&q=Tynemouth+Aquarium+Grand+Parade+NE30+4JF`; restrict the browser key to the intended local/published origins and Maps Embed API.
+
+Contact sources: hospital email and listed telephone from the Charity Commission contact record; site address and reception telephone from https://www.tynemouthaquarium.co.uk/visitor-info/contact-us/ and https://www.tynemouthaquarium.co.uk/visitor-info/getting-here/ . The charity’s registered address is not used as the hospital map location. Include all six completed pages when refreshing shared asset versions.
