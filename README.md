@@ -113,3 +113,11 @@ https://www.tynemouthaquarium.co.uk/blog/animal-stories/double-seal-release/
 Four release photographs were downloaded from that article to `Images/minnie-tweety-release-1.jpg` through `-4.jpg`. The record credits and links to the Aquarium on the full profile and in its modal. Individual seals are not identified in the image captions because the source does not specify which is pictured. The publication date is labelled as a report date, not an exact release date.
 
 Checks cover expanded and compact rendering, all profile/story controls, the new four-photo gallery, attribution, image paths, and cross-page anchors. Actual browser rendering remains unverified in this environment.
+
+### Updates page
+
+`updates.html` uses the shared header, footer, Facebook feed and detail dialog. Edit news in `updates` inside `js/content.js`; the page sorts entries by their ISO `date` (newest first). The homepage uses the same content with its compact card layout. Add `posters` to show images in the story dialog; the first poster also illustrates the Updates card. Optional poster `width` and `height` preserve nonstandard image proportions.
+
+The `fun` collection contains the life advice and secretly-a-seal features, with readable text and the complete original poster series in their dialogs. The book corner opens the shared `books` update. Release highlights reference existing seal records via `data-records` on the Updates page, so their stories stay consistent with Our Seals.
+
+The Facebook section uses the same public embed and direct-page fallback as the homepage; availability depends on Facebook and the visitor’s browser settings. After editing shared CSS or JavaScript, refresh the `?v=` asset versions on all four pages before publishing to GitHub Pages.

@@ -4,6 +4,114 @@
  * The repeated seal profiles are editable placeholders from the design.
  */
 window.SealHospitalContent = {
+  fun: [
+  {
+    "id": "life-advice",
+    "title": "Life advice from our seals",
+    "summary": "Take it easy, find your comfortable spot and make plenty of time for lounging. Our seals have a few thoughts on life.",
+    "details": [
+      "A little light-hearted wisdom from the hospital’s seal personalities. Enjoy their advice in the original photo series below."
+    ],
+    "sections": [
+      {
+        "title": "The seal guide to a good day",
+        "items": [
+          "Take it easy — Minnie.",
+          "Do whatever makes you feel comfortable — Kermit.",
+          "Shout loudly at any time. Let it all out — Bart.",
+          "Have a good work-life balance: 80% lounging, 20% working — Kermit."
+        ]
+      }
+    ],
+    "postersTitle": "Advice, straight from the seals",
+    "posters": [
+      {
+        "src": "Images/life_advice_1.jpg",
+        "alt": "Life advice from our seals: series cover.",
+        "caption": "Life advice from our seals."
+      },
+      {
+        "src": "Images/life_advice_2.jpg",
+        "alt": "Take it easy — Minnie.",
+        "caption": "Take it easy — Minnie."
+      },
+      {
+        "src": "Images/life_advice_3.jpg",
+        "alt": "Do whatever makes you feel comfortable — Kermit.",
+        "caption": "Do whatever makes you feel comfortable — Kermit."
+      },
+      {
+        "src": "Images/life_advice_4.jpg",
+        "alt": "Shout loudly at any time. Let it all out — Bart.",
+        "caption": "Shout loudly at any time. Let it all out — Bart."
+      },
+      {
+        "src": "Images/life_advice_5.jpg",
+        "alt": "Have a good work-life balance: 80% lounging, 20% working — Kermit.",
+        "caption": "Have a good work-life balance: 80% lounging, 20% working — Kermit."
+      }
+    ]
+  },
+  {
+    "id": "secret-seal",
+    "title": "6 signs you’re secretly a seal",
+    "summary": "Always hungry? A champion napper? Protective of your personal space? You might recognise yourself in this playful photo series.",
+    "details": [
+      "Just for fun: how many of these very seal-like habits sound familiar?"
+    ],
+    "sections": [
+      {
+        "title": "Sound like you?",
+        "items": [
+          "You’re really nosy.",
+          "You’re always hungry.",
+          "You love a nap.",
+          "You give a great side eye.",
+          "You’re a poser.",
+          "You need your personal space."
+        ]
+      }
+    ],
+    "postersTitle": "Six signs, in pictures",
+    "posters": [
+      {
+        "src": "Images/secret_seal_1.jpg",
+        "alt": "Six signs you’re secretly a seal: series cover.",
+        "caption": "Six signs you’re secretly a seal."
+      },
+      {
+        "src": "Images/secret_seal_2.jpg",
+        "alt": "You’re really nosy.",
+        "caption": "1. You’re really nosy."
+      },
+      {
+        "src": "Images/secret_seal_3.jpg",
+        "alt": "You’re always hungry.",
+        "caption": "2. You’re always hungry."
+      },
+      {
+        "src": "Images/secret_seal_4.jpg",
+        "alt": "You love a nap.",
+        "caption": "3. You love a nap."
+      },
+      {
+        "src": "Images/secret_seal_5.jpg",
+        "alt": "You give a great side eye.",
+        "caption": "4. You give a great side eye."
+      },
+      {
+        "src": "Images/secret_seal_6.jpg",
+        "alt": "You’re a poser.",
+        "caption": "5. You’re a poser."
+      },
+      {
+        "src": "Images/secret_seal_7.jpg",
+        "alt": "You need your personal space.",
+        "caption": "6. You need your personal space."
+      }
+    ]
+  }
+],
   sealStories: [
   {
     "id": "xana-shower",
@@ -761,17 +869,128 @@ window.SealHospitalContent = {
 			dateLabel: "8th March 2026",
 			summary:
 				"On International Women’s Day 2026 we want to celebrate our volunteers who give their time and effort to look after the rescued pups!\nAlso remembering trustee and volunteer Roxy.",
-			details: [],
+			details: ["On International Women’s Day 2026, we celebrate the volunteers who give their time and effort to care for our rescued seal pups.", "We are also remembering Roxy, our trustee and volunteer."],
+            mediaLabel: "photo",
+            postersTitle: "Celebrating our volunteers",
+            posters: [
+  {
+    "src": "Images/IWD_5.jpg",
+    "alt": "Three volunteers together on the beach.",
+    "caption": "Three volunteers together on the beach.",
+    "width": 1591,
+    "height": 1535
+  },
+  {
+    "src": "Images/IWD_1.jpg",
+    "alt": "Volunteers gathered beside a seal transport carrier at the coast.",
+    "caption": "Volunteers gathered beside a seal transport carrier at the coast.",
+    "width": 1600,
+    "height": 1066
+  },
+  {
+    "src": "Images/IWD_.jpg",
+    "alt": "A volunteer cleaning a hospital pen.",
+    "caption": "A volunteer cleaning a hospital pen.",
+    "width": 1200,
+    "height": 1600
+  },
+  {
+    "src": "Images/IWD_3.jpg",
+    "alt": "A volunteer wearing a protective glove at the hospital.",
+    "caption": "A volunteer wearing a protective glove at the hospital.",
+    "width": 1536,
+    "height": 2048
+  },
+  {
+    "src": "Images/IWD_4.jpg",
+    "alt": "Two volunteers at work inside the hospital.",
+    "caption": "Two volunteers at work inside the hospital.",
+    "width": 2048,
+    "height": 1690
+  },
+  {
+    "src": "Images/IWD_6.jpg",
+    "alt": "A volunteer beside a seal at the water’s edge.",
+    "caption": "A volunteer beside a seal at the water’s edge.",
+    "width": 1200,
+    "height": 1600
+  },
+  {
+    "src": "Images/IWD_7.jpg",
+    "alt": "A seal emerging from a transport carrier on the beach.",
+    "caption": "A seal emerging from a transport carrier on the beach.",
+    "width": 1200,
+    "height": 1600
+  },
+  {
+    "src": "Images/IWD_8.jpg",
+    "alt": "Volunteers carrying transport crates towards the sea.",
+    "caption": "Volunteers carrying transport crates towards the sea.",
+    "width": 2048,
+    "height": 1152
+  },
+  {
+    "src": "Images/IWD_9.jpg",
+    "alt": "A photographer taking pictures on the beach.",
+    "caption": "A photographer taking pictures on the beach.",
+    "width": 1600,
+    "height": 1066
+  },
+  {
+    "src": "Images/IWD_10.jpg",
+    "alt": "Three volunteers wearing face masks at the hospital.",
+    "caption": "Three volunteers wearing face masks at the hospital.",
+    "width": 1600,
+    "height": 1202
+  }
+],
 		},
-		{
-			id: "books",
-			title: "World Book Day",
-			date: "2026-03-05",
-			dateLabel: "5th March 2026",
-			summary:
-				"On World Book Day 2026 we celebrate the fiction and non-fiction books out there, especially the ones about marine wildlife (but mostly seals).\nOne of our own volunteers, Alison, has recently written a book about Spud the seal pup called ‘The Selfie Seal’.",
-			details: [],
-		},
+{
+  "id": "books",
+  "title": "World Book Day: The Selfie Seal",
+  "date": "2026-03-05",
+  "dateLabel": "5th March 2026",
+  "summary": "Meet Spud, a cheeky seal pup with a love of posing! For World Book Day, discover volunteer Alison Pake’s The Selfie Seal — an adventure for ages 3–8 about friendship and protecting our oceans.",
+  "details": [
+  "Meet Spud – The Selfie Seal! Spud is a cheeky seal pup with a big heart and a love for people and posing. His seaside adventure takes young readers through fun and friendship, while sharing an important message about protecting our oceans.",
+  "Written by hospital volunteer Alison Pake and inspired by real seal rescue stories, The Selfie Seal is an illustrated children’s book ideal for ages 3–8, with plenty for older readers to enjoy together. Spud shows how small actions, such as picking up plastic, can make a big difference.",
+  "For World Book Day 2026, we’re celebrating the stories that help children discover marine wildlife and care about the sea."
+],
+  "sections": [
+  {
+    "title": "What’s inside?",
+    "items": [
+      "A heartwarming, fun-filled story inspired by real-life seal rescue work.",
+      "Bright illustrations to accompany Spud’s seaside adventure.",
+      "Bonus pages with seal fun facts and information about plastic pollution.",
+      "Ideas for how children can become ocean heroes through small, positive actions."
+    ]
+  },
+  {
+    "title": "A story to share",
+    "paragraphs": [
+      "Enjoy Spud’s adventure at bedtime, in the classroom or during an ocean-themed story time. It’s a joyful way to start conversations about wildlife and looking after our coast."
+    ]
+  },
+  {
+    "title": "Supporting wildlife rescue",
+    "paragraphs": [
+      "The book description states that proceeds help fund local wildlife and seal rescue centres, with potential support for a future seal hospital in the North East of England."
+    ]
+  }
+],
+  "source": {"url": "https://www.amazon.co.uk/Selfie-Seal-Alison-Pake/dp/B0FCBFM9RQ", "label": "View The Selfie Seal on Amazon ↗"},
+  "postersTitle": "The Selfie Seal",
+  "posters": [
+    {
+      "src": "Images/selfie_seal.jpg",
+      "alt": "The Selfie Seal book cover, showing an illustrated seal holding a phone underwater. Written by Alison Pake; illustrated by ChatGPT.",
+      "caption": "The Selfie Seal, written by volunteer Alison Pake.",
+      "width": 1080,
+      "height": 1100
+    }
+  ]
+},
 	],
 	actions: [
 		{

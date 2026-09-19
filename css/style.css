@@ -1287,3 +1287,65 @@ body:has(dialog[open]) {
  .seal-page-advice .button { width: 100%; }
  .seals-support .button-row { flex-direction: column; }
 }
+
+/* Updates: shared stories, with a little room for seal personality. */
+.updates-hero { padding: 60px 0; background: linear-gradient(115deg, var(--deep), var(--teal)); color: var(--pale); }
+.updates-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.updates-hero-grid > *, .book-feature > *, .fun-card > * { min-width: 0; }
+.updates-hero .eyebrow { color: var(--mint); }
+.updates-hero h1 { font-size: clamp(40px, 4.8vw, 68px); line-height: 1.12; letter-spacing: -1.8px; }
+.updates-hero h1 span { color: var(--mint); }
+.updates-hero p:not(.eyebrow) { max-width: 500px; margin: 24px 0; font-size: 18px; }
+.updates-hero .button-row { flex-wrap: wrap; }
+.updates-hero figure, .book-feature figure { margin: 0; }
+.updates-hero img { width: 100%; height: 390px; object-fit: cover; border-radius: 70px 20px 20px; }
+.updates-hero figcaption { color: var(--mint); font-size: 12px; margin-top: 12px; }
+.updates-page .section-heading > p:not(.eyebrow) { color: var(--slate); max-width: 640px; margin: 18px auto 0; }
+.news-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.update-card.news-card { display: grid; grid-template-columns: 38% minmax(0, 1fr); padding: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+.news-card-visual { background: var(--pale); display: flex; align-items: center; justify-content: center; padding: 12px; }
+.news-card-visual img { display: block; width: 100%; height: auto; object-fit: contain; }
+.news-card-illustration { flex-direction: column; gap: 20px; text-align: center; color: var(--ocean); font-weight: 700; }
+.news-card-illustration svg { width: 64px; height: 64px; }
+.news-card-body { padding: 26px; display: flex; flex-direction: column; align-items: flex-start; }
+.news-card-body h3 { font-size: 22px; line-height: 1.3; }
+.news-card-body time { margin: 8px 0 14px; }
+.news-card-body p { margin-bottom: 18px; line-height: 1.6; }
+.news-card .text-link { float: none; min-height: 44px; margin-top: auto; }
+.updates-releases { background: var(--pale); }
+.book-feature { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); align-items: center; gap: 80px; max-width: 1040px; }
+.book-feature figure { padding: 26px; background: var(--sand); border-radius: 24px; }
+.book-feature img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.book-feature figcaption { font-size: 12px; text-align: center; margin-top: 16px; color: var(--slate); }
+.book-feature h2 { font-size: clamp(32px, 3.4vw, 46px); line-height: 1.18; }
+.book-feature p:not(.eyebrow) { margin: 24px 0; color: var(--slate); }
+.seal-fun { background: var(--sand); }
+.fun-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.fun-card { display: grid; grid-template-columns: 46% minmax(0, 1fr); background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; align-items: center; }
+.fun-card > img { display: block; width: 100%; height: auto; }
+.fun-card > div { padding: 24px; }
+.fun-card h3 { font-size: 25px; line-height: 1.25; }
+.fun-card p { margin: 18px 0; color: var(--slate); }
+.fun-card .button { white-space: normal; }
+@media (max-width: 1000px) {
+ .updates-hero-grid { gap: 30px; }
+ .news-card-body { padding: 20px; }
+ .fun-card { grid-template-columns: 1fr; }
+ .fun-card > img { max-height: 350px; object-fit: contain; background: var(--pale); }
+ .book-feature { gap: 40px; }
+}
+@media (max-width: 640px) {
+ .updates-hero { padding: 34px 0; }
+ .updates-hero-grid, .news-grid, .book-feature, .fun-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+ .updates-hero h1 { font-size: clamp(34px, 9vw, 48px); letter-spacing: -1px; }
+ .updates-hero p:not(.eyebrow) { font-size: 16px; }
+ .updates-hero img { height: 245px; border-top-left-radius: 48px; }
+ .updates-hero .button-row { flex-direction: column; }
+ .update-card.news-card { grid-template-columns: minmax(0, 1fr); }
+ .news-card-visual { min-height: 150px; }
+ .news-card-visual img { max-height: 260px; width: auto; max-width: 100%; }
+ .news-card-body h3 { font-size: 23px; }
+ .book-feature figure { max-width: 360px; margin-inline: auto; }
+ .book-feature .button, .fun-card .button { width: 100%; }
+ .fun-card > img { max-height: 380px; }
+}

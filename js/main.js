@@ -120,17 +120,17 @@ document.addEventListener("click", (event) => {
 					link.rel = "noopener noreferrer";
 					link.setAttribute(
 						"aria-label",
-						`Open full-size poster: ${poster.caption} (opens in a new tab)`,
+						`Open full-size ${item.mediaLabel || "poster"}: ${poster.caption} (opens in a new tab)`,
 					);
 					const image = document.createElement("img");
 					image.src = poster.src;
 					image.alt = poster.alt;
 					image.loading = "lazy";
-					image.width = 1080;
-					image.height = 1350;
+					image.width = poster.width || 1080;
+					image.height = poster.height || 1350;
 					link.append(image);
 					const caption = document.createElement("figcaption");
-					caption.textContent = `${poster.caption} Select the poster to view it full size.`;
+					caption.textContent = `${poster.caption} Select the ${item.mediaLabel || "poster"} to view it full size.`;
 					figure.append(link, caption);
 					content.append(figure);
 				});

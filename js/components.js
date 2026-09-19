@@ -85,7 +85,7 @@
     return card;
   }
 
-  function updateCard(item) {
+  function updateCard(item, collection, variant) {
     const card = element('article', 'update-card');
     const date = element('time', '', item.dateLabel);
     date.dateTime = item.date;
@@ -97,6 +97,26 @@
     const control = action(item, 'updates', 'Read more');
     control.setAttribute('aria-label', `Read more: ${item.title}`);
     card.append(element('h3', '', item.title), date, summary, control);
+    if (variant === 'editorial') {
+      card.classList.add('news-card');
+      const body = element('div', 'news-card-body');
+      body.append(...Array.from(card.childNodes));
+      const poster = item.posters?.[0];
+      const visual = element('div', 'news-card-visual');
+      if (poster) {
+        const image = element('img');
+        image.src = poster.src;
+        image.alt = poster.alt;
+        image.loading = 'lazy';
+        image.width = poster.width || 1080;
+        image.height = poster.height || 1350;
+        visual.append(image);
+      } else {
+        visual.classList.add('news-card-illustration');
+        visual.append(icon('heart'), element('span', '', 'Our volunteer community'));
+      }
+      card.append(visual, body);
+    }
     return card;
   }
 
@@ -139,7 +159,24 @@
     return card;
   }
 
-  const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard, team: teamCard, sealStories: sealStoryCard };
+  function funCard(item) {
+    const card = element('article', 'fun-card');
+    const image = element('img');
+    image.src = item.posters[0].src;
+    image.alt = item.posters[0].alt;
+    image.loading = 'lazy';
+    image.width = 1080;
+    image.height = 1350;
+    const body = element('div');
+    body.append(element('h3', '', item.title), element('p', '', item.summary));
+    const control = action(item, 'fun', item.id === 'life-advice' ? 'Read the seal advice' : 'See all six signs');
+    control.className = 'button button-slate';
+    body.append(control);
+    card.append(image, body);
+    return card;
+  }
+
+  const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard, team: teamCard, sealStories: sealStoryCard, fun: funCard };
   document.querySelectorAll('[data-cards]').forEach(container => {
     const collection = container.dataset.cards;
     if (collection === 'patients' || collection === 'releases') {
@@ -147,10 +184,15 @@
       container.setAttribute('role', 'region');
       container.setAttribute('aria-label', `${collection === 'patients' ? 'Current patients' : 'Released seals'} — scroll for more seals`);
     }
+    let records = content[collection];
+    if (container.dataset.records) {
+      records = container.dataset.records.split(',').map(id => records.find(item => item.id === id.trim())).filter(Boolean);
+    }
+    if (container.dataset.sort === 'newest') {
+      records = [...records].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    }
     const limit = Number.parseInt(container.dataset.limit, 10);
-    const items = Number.isInteger(limit) && limit > 0
-      ? content[collection].slice(0, limit)
-      : content[collection];
+    const items = Number.isInteger(limit) && limit > 0 ? records.slice(0, limit) : records;
     container.style.setProperty('--card-count', String(Math.max(1, Math.min(items.length, 3))));
     container.replaceChildren(...items.map(item => renderers[collection](item, collection, container.dataset.variant)));
   });

@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Meet Xana and Kraken, explore seal stories, and discover the release journeys of Isla, Brutus, Minnie Mouse and Tweety Pie." name="description"/>
+<meta content="News from Tynemouth Seal Hospital: fundraising, release stories, The Selfie Seal, Facebook updates and a lighter look at life with seals." name="description"/>
 <meta content="#073B45" name="theme-color"/>
-<title>Our Seals | Current Patients, Stories &amp; Releases</title>
+<title>Updates | News, Release Stories &amp; Seal Life</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico?v=de065ad5a11a" />
 <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png?v=dce4ab00bb22" />
 <link rel="manifest" href="site.webmanifest?v=2ada047489ae" />
@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css?v=a47005d36553" rel="stylesheet"/>
 <script defer="" src="js/content.js?v=128a4eb23077"></script><script defer="" src="js/components.js?v=429bb6ec955c"></script><script defer="" src="js/main.js?v=6502de2d2b18"></script>
-</head>
+<script defer="" src="js/facebook.js?v=53881b20fcad"></script></head>
 <body>
 <svg aria-hidden="true" class="svg-library" xmlns="http://www.w3.org/2000/svg">
 <symbol id="icon-shirt" viewBox="0 0 24 24"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4a4 4 0 0 1-8 0Z"></path></symbol>
@@ -74,20 +74,39 @@
 <span class="visually-hidden">Toggle navigation</span><span aria-hidden="true" class="menu-bars"></span>
 </button>
 <nav aria-label="Main navigation" id="navigation">
-<a href="index.html">Home</a><a href="about.html">About us</a><a aria-current="page" href="#patients">Our seals</a><a href="updates.html">Updates</a><a href="index.html#support">Support us</a><a href="#contact">Contact us</a><a class="button button-coral nav-donate" href="index.html#donate">Donate
+<a href="index.html">Home</a><a href="about.html">About us</a><a href="seals.html">Our seals</a><a aria-current="page" href="updates.html">Updates</a><a href="index.html#support">Support us</a><a href="#contact">Contact us</a><a class="button button-coral nav-donate" href="index.html#donate">Donate
 						<svg aria-hidden="true" class="icon"><use href="#icon-heart"></use></svg></a>
 </nav>
 </div>
 </header>
-<main class="seal-directory" id="main">
-<section aria-labelledby="seals-title" class="seal-page-hero"><div class="container seal-page-hero-grid"><div><p class="eyebrow">Rescue. Rehabilitate. Release.</p><h1 id="seals-title">Every seal<br/>has a <span>story.</span></h1><p>From the first feed to the first swim back at sea. Meet our patients and the seals who have already found their way home.</p><div class="button-row"><a class="button button-coral" href="#patients">Meet our patients</a><a class="button button-glass" href="#releases">See our releases</a></div></div><figure><img alt="Brutus in the sea after his release" height="1066" src="Images/brutus_3.jpg" width="1600"/><figcaption>Brutus · back in the wild</figcaption></figure></div></section>
-<nav aria-label="Explore our seals" class="about-jump-links"><div class="container"><a href="#patients">Current patients</a><a href="#stories">Seal stories</a><a href="#releases">Releases</a></div></nav>
-<section class="section" id="patients"><div class="container"><div class="section-heading"><p class="eyebrow">Currently at the hospital</p><h2>Small steps. Stronger seals.</h2><p>Get to know the patients in our care, their rescue stories and the milestones along the way.</p></div><div class="seal-profile-list" data-cards="patients" data-variant="expanded"></div><noscript><p>Enable JavaScript to view the patient profiles.</p></noscript><div class="patient-support-note"><p>Help provide food and care for their next step.</p><a class="text-link" href="index.html#donate">Support our patients →</a></div></div></section>
-<section class="section seal-moments" id="stories"><div class="container"><div class="section-heading"><p class="eyebrow">Seal stories</p><h2>The moments that stay with us</h2><p>A favourite shower, a feisty personality, a familiar face on the shore. There’s more to every seal than their time in a pen.</p></div><div class="seal-moments-grid" data-cards="sealStories"></div></div></section>
-<section class="section" id="releases"><div class="container"><div class="section-heading"><p class="eyebrow">Back where they belong</p><h2>Life beyond the hospital</h2><p>Release days and returning visitors: explore the next chapter for seals who have completed their care.</p></div><div class="seal-profile-list" data-cards="releases" data-variant="expanded"></div></div></section>
-<section class="section seals-support"><div class="container"><p class="eyebrow">Help write the next success story</p><h2>More fish. More care.<br/>More journeys home.</h2><p>Your support helps the team care for seals on their way back to the wild.</p><div class="button-row"><a class="button button-coral" href="index.html#donate">Donate to our seal patients ♡</a><a class="button button-glass" href="https://www.amazon.co.uk/hz/wishlist/ls/N7QC7FGDB0TE?ref_=wl_share">Send supplies →</a></div></div></section>
-<section class="section seal-page-advice"><div class="container"><div><p class="eyebrow">Found a seal?</p><h2>Give them space.<br/>Get expert advice.</h2><p>Keep people and dogs away. Seals rest on land and do not always need rescuing.</p></div><div><a class="button button-coral" href="tel:01825765546"><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>Call BDMLR 01825 765 546</a><a class="text-link" href="index.html#found-a-seal">Read our found a seal advice →</a></div></div></section>
-</main>
+<main class="updates-page" id="main">
+<section class="updates-hero"><div class="container updates-hero-grid"><div><p class="eyebrow">From our hospital to your feed</p><h1>Good news.<br/>Big personalities.<br/><span>All things seals.</span></h1><p>Catch up on hospital news, celebrate a return to the sea, and enjoy a little seal wisdom along the way.</p><div class="button-row"><a class="button button-coral" href="#latest-news">Read the latest</a><a class="button button-glass" href="#seal-fun">A little seal humour</a></div></div><figure><img alt="Sylvester swimming in the sea after his release" height="720" src="Images/sylvester_7.jpg" width="1080"/><figcaption>A new chapter for Sylvester · released back into the wild</figcaption></figure></div></section>
+<nav aria-label="Explore updates" class="about-jump-links"><div class="container"><a href="#latest-news">Latest news</a><a href="#release-updates">Release stories</a><a href="#book-corner">Book corner</a><a href="#seal-fun">Just for fun</a><a href="#facebook">Facebook</a></div></nav>
+<section class="section" id="latest-news"><div class="container"><div class="section-heading"><p class="eyebrow">What’s happening at the hospital?</p><h2>Latest updates</h2><p>Community news, fundraising and ways to make a difference for our seal patients.</p></div><div class="news-grid" data-cards="updates" data-sort="newest" data-variant="editorial"></div><noscript><p>Enable JavaScript to read our updates and open the full stories.</p></noscript></div></section>
+<section class="section updates-releases" id="release-updates"><div class="container"><div class="section-heading"><p class="eyebrow">The news we love to share</p><h2>Back to the wild</h2><p>A successful release is an update worth celebrating. Catch up with the seals taking their next steps beyond the hospital.</p></div><div class="seal-grid" data-cards="releases" data-limit="3" data-records="minnie-tweety-2026,sylvester-release,releases-2"></div><div class="section-action"><a class="button button-slate" href="seals.html#releases">Explore all our releases →</a></div></div></section>
+<section class="section" id="book-corner"><div class="container book-feature"><figure><img alt="The Selfie Seal, written by Alison Pake" height="1100" loading="lazy" src="Images/selfie_seal.jpg" width="1080"/><figcaption>A story from our volunteer community</figcaption></figure><div><p class="eyebrow">Our book corner · World Book Day 2026</p><h2>A little seal.<br/>A story to share.</h2><p>Meet Spud, a cheeky seal pup with a big heart and a love of posing! Written by hospital volunteer Alison Pake, <em>The Selfie Seal</em> is a seaside adventure inspired by real rescue stories.</p><p>Ideal for ages <strong>3–8</strong>, this illustrated story celebrates friendship and protecting our oceans. Bonus pages share seal facts, plastic pollution information and ways children can become ocean heroes.</p><button class="button button-coral" data-card-collection="updates" data-card-id="books" type="button">Discover The Selfie Seal →</button><a class="profile-source" href="https://www.amazon.co.uk/Selfie-Seal-Alison-Pake/dp/B0FCBFM9RQ" target="_blank" rel="noopener noreferrer">View The Selfie Seal on Amazon ↗</a></div></div></section>
+<section class="section seal-fun" id="seal-fun"><div class="container"><div class="section-heading"><p class="eyebrow">Whiskers, wisdom &amp; a little silliness</p><h2>The lighter side of seal life</h2><p>Serious about their recovery. Not always serious about themselves.</p></div><div class="fun-grid" data-cards="fun"></div></div></section>
+<section aria-labelledby="facebook-title" class="section facebook-section" id="facebook">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Follow our journey</p>
+<h2 id="facebook-title">From our Facebook Page</h2>
+<p id="facebook-description">
+							Follow the latest news, seal stories and behind-the-scenes moments
+							from the hospital.
+						</p>
+</div>
+<div id="facebook-feed"></div>
+<p class="facebook-fallback">
+						Feed not showing?
+						<a href="https://www.facebook.com/TynemouthSeal/" rel="noopener noreferrer" target="_blank">Read our posts on Facebook ↗</a>
+</p>
+<p class="facebook-notice">
+						This feed is provided by Facebook and may use cookies or require a
+						Facebook login.
+					</p>
+</div>
+</section><section class="section about-support"><div class="container"><p class="eyebrow">Help make more good news</p><h2>Be part of their next chapter</h2><p>Support the care that gives rescued seals another chance in the wild.</p><div class="button-row"><a class="button button-coral" href="index.html#donate">Support our patients ♡</a><a class="button button-glass" href="seals.html#patients">Meet our current patients →</a></div></div></section></main>
 <footer class="site-footer" id="contact">
 <div class="container">
 <div class="footer-grid">
@@ -105,7 +124,7 @@
 </div>
 <nav aria-label="Footer navigation">
 <p class="eyebrow">Quick links</p>
-<a href="#patients">Our seals →</a><a href="index.html#about">What we do →</a><a href="#stories">Seal stories →</a><a href="about.html">About us →</a><a href="updates.html">Latest updates →</a>
+<a href="seals.html#patients">Our seals →</a><a href="index.html#about">What we do →</a><a href="seals.html#releases">Seal stories →</a><a href="about.html">About us →</a><a href="updates.html">Latest updates →</a>
 </nav>
 <div>
 <p class="eyebrow">Need help?</p>
