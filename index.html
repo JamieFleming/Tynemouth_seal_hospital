@@ -8,8 +8,11 @@
 			content="Tynemouth Seal Hospital — rescuing, rehabilitating and releasing seals on the North East coast. Meet our patients and discover how you can help." />
 		<meta name="theme-color" content="#073B45" />
 		<title>Tynemouth Seal Hospital | Rescue. Rehabilitate. Release.</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" />
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/content.js" defer></script><script src="js/components.js" defer></script><script src="js/main.js" defer></script>
+		<script src="js/content.js" defer></script><script src="js/components.js" defer></script><script src="js/main.js" defer></script><script src="js/facebook.js" defer></script>
 	</head>
 	<body>
 		<svg
@@ -79,7 +82,7 @@
 					aria-expanded="false"
 					aria-controls="navigation"
 					type="button">
-					Menu <span aria-hidden="true">☰</span>
+					<span class="visually-hidden">Toggle navigation</span><span class="menu-bars" aria-hidden="true"></span>
 				</button>
 				<nav id="navigation" aria-label="Main navigation">
 					<a href="#main" aria-current="page">Home</a
@@ -116,6 +119,12 @@
 						></a>
 					</div>
 				</div>
+<nav class="hero-process" aria-label="Our rescue journey">
+<a href="#process-rescue"><span class="process-icon"><svg class="icon" aria-hidden="true"><use href="#icon-ring" /></svg></span><span>Rescue</span></a>
+<a href="#process-care"><span class="process-icon"><svg class="icon" aria-hidden="true"><use href="#icon-heart" /></svg></span><span>Care</span></a>
+<a href="#process-rehabilitate"><span class="process-icon"><svg class="icon" aria-hidden="true"><use href="#icon-waves" /></svg></span><span>Rehab</span></a>
+<a href="#process-release"><span class="process-icon"><svg class="icon" aria-hidden="true"><use href="#icon-home" /></svg></span><span>Release</span></a>
+</nav>
 			</section>
 			<section id="about" class="section process">
 				<div class="container">
@@ -124,7 +133,7 @@
 						<h2>From rescue to release</h2>
 					</div>
 					<div class="process-grid">
-						<article class="process-card">
+						<article class="process-card" id="process-rescue">
 							<span class="process-icon"
 								><svg class="icon" aria-hidden="true">
 									<use href="#icon-ring" /></svg
@@ -136,7 +145,7 @@
 								specialist care.
 							</p>
 						</article>
-						<article class="process-card">
+						<article class="process-card" id="process-care">
 							<span class="process-icon"
 								><svg class="icon" aria-hidden="true">
 									<use href="#icon-heart" /></svg
@@ -148,7 +157,7 @@
 								journey.
 							</p>
 						</article>
-						<article class="process-card">
+						<article class="process-card" id="process-rehabilitate">
 							<span class="process-icon"
 								><svg class="icon" aria-hidden="true">
 									<use href="#icon-waves" /></svg
@@ -160,7 +169,7 @@
 								kept limited.
 							</p>
 						</article>
-						<article class="process-card">
+						<article class="process-card" id="process-release">
 							<span class="process-icon"
 								><svg class="icon" aria-hidden="true">
 									<use href="#icon-home" /></svg
@@ -186,18 +195,10 @@
 				<div class="container rescue-layout">
 					<div class="rescue-intro">
 						<p class="eyebrow">Found a seal?</p>
-						<h2 id="rescue-title">Found a seal on<br />the beach?</h2>
+						<h2 id="rescue-title">Found a seal on <br />the beach?</h2>
 						<p class="warning">Don’t approach it.</p>
 						<p>Seals regularly rest on land and don’t always need rescuing.</p>
-						<a class="button button-coral" href="tel:01825765546"
-							><svg class="icon" aria-hidden="true">
-								<use href="#icon-phone" />
-							</svg>
-							Call BDMLR 01825 765 546</a
-						>
-						<p class="rescue-note">
-							For expert advice, call British Divers Marine Life Rescue (BDMLR).
-						</p>
+						
 					</div>
 					<div class="rescue-tips">
 						<article>
@@ -228,6 +229,15 @@
 							</p>
 						</article>
 					</div>
+<div class="rescue-contact"><a class="button button-coral" href="tel:01825765546"
+							><svg class="icon" aria-hidden="true">
+								<use href="#icon-phone" />
+							</svg>
+							Call BDMLR 01825 765 546</a
+						>
+						<p class="rescue-note">
+							For expert advice, call British Divers Marine Life Rescue (BDMLR).
+						</p></div>
 				</div>
 			</section>
 			<section id="patients" class="section">
@@ -263,6 +273,19 @@
 					</div>
 				</div>
 			</section>
+
+            <section id="facebook" class="section facebook-section" aria-labelledby="facebook-title">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Follow our journey</p>
+                        <h2 id="facebook-title">From our Facebook Page</h2>
+                        <p id="facebook-description">Follow the latest news, seal stories and behind-the-scenes moments from the hospital.</p>
+                    </div>
+                    <div id="facebook-feed"></div>
+                    <p class="facebook-fallback">Feed not showing? <a href="https://www.facebook.com/TynemouthSeal/" target="_blank" rel="noopener noreferrer">Read our posts on Facebook ↗</a></p>
+                    <p class="facebook-notice">This feed is provided by Facebook and may use cookies or require a Facebook login.</p>
+                </div>
+            </section>
 			<section id="stories" class="section">
 				<div class="container">
 					<div class="section-heading">
@@ -312,7 +335,7 @@
 									></label
 								><label
 									><input type="radio" name="amount" value="Other" /><span
-										>Other</span
+										>Enter another amount</span
 									></label
 								>
 							</div>
@@ -351,23 +374,23 @@
 				</div>
 			</section>
 			<section id="support" class="section help">
-				<div class="container">
+				<div class="container"><details class="support-details" open><summary>More ways to support us <span aria-hidden="true">+</span></summary><div class="support-content">
 					<p class="eyebrow">More ways to help</p>
 					<h2 id="help">Every action makes a difference</h2>
 					<div class="help-grid" data-cards="actions"></div>
-				</div>
+				</div></details></div>
 			</section>
 		</main>
 		<footer id="contact" class="site-footer">
 			<div class="container">
 				<div class="footer-grid">
 					<div class="footer-about">
-						<img
+						<picture><source media="(max-width: 640px)" srcset="Images/logo.png" /><img
 							src="Images/logo_white.png"
 							alt="Tynemouth Seal Hospital"
 							loading="lazy"
 							width="240"
-							height="80" />
+							height="80" /></picture>
 						<h3>Rescue. Rehabilitate. Release.</h3>
 						<p>
 							Helping injured and vulnerable seals return to where they belong.

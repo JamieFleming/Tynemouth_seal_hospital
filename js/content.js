@@ -4,6 +4,12 @@
  * The repeated seal profiles are editable placeholders from the design.
  */
 window.SealHospitalContent = {
+  // Leave posts empty for the live Page timeline. For three selected embeds,
+  // paste up to three public post URLs here, newest first. They do not auto-update.
+  "facebook": {
+    "pageUrl": "https://www.facebook.com/TynemouthSeal/",
+    "posts": []
+  },
   "patients": [
     {
       "id": "patients-1",

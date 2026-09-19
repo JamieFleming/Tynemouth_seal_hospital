@@ -70,8 +70,8 @@ document.addEventListener('click', event => {
   }
   if (button.dataset.policy) {
     const policies = {
-      privacy: ['Privacy', 'This static preview does not include contact forms, analytics or payment processing. The hospital’s full privacy notice will be added before launch.'],
-      cookies: ['Cookies', 'This preview does not set cookies or use third-party tracking. This notice should be reviewed when live services are connected.'],
+      privacy: ['Privacy', 'This preview loads fonts from Google Fonts and embeds content from Facebook. These services receive connection information when their content loads. No contact forms or payment processing are connected. The hospital’s full privacy notice will be added before launch.'],
+      cookies: ['Cookies', 'The website does not set its own cookies. Embedded Facebook content may use cookies or other storage under Meta’s policies. The final cookie notice and consent arrangements should be reviewed before launch.'],
       accessibility: ['Accessibility', 'This website supports keyboard navigation, visible focus indicators, reduced motion preferences and responsive text layouts. An accessibility contact and full statement will be added before launch.']
     };
     showDetail(policies[button.dataset.policy][0], [policies[button.dataset.policy][1]]);
@@ -97,3 +97,15 @@ form.addEventListener('submit', event => {
 });
 updateDonation();
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+// Keep extra support options compact on phones and expanded on larger screens.
+const supportDetails = document.querySelector('.support-details');
+const mobileLayout = window.matchMedia('(max-width: 640px)');
+function syncSupportLayout() {
+  supportDetails.open = !mobileLayout.matches;
+}
+syncSupportLayout();
+mobileLayout.addEventListener('change', syncSupportLayout);
+document.querySelectorAll('a[href="#support"], a[href="#help"]').forEach(link => {
+  link.addEventListener('click', () => { supportDetails.open = true; });
+});

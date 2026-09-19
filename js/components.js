@@ -91,6 +91,11 @@
   const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard };
   document.querySelectorAll('[data-cards]').forEach(container => {
     const collection = container.dataset.cards;
+    if (collection === 'patients' || collection === 'releases') {
+      container.tabIndex = 0;
+      container.setAttribute('role', 'region');
+      container.setAttribute('aria-label', `${collection === 'patients' ? 'Current patients' : 'Recent releases'} — scroll for more seals`);
+    }
     container.replaceChildren(...content[collection].map(item => renderers[collection](item, collection)));
   });
 })();
