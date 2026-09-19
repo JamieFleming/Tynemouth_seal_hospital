@@ -88,7 +88,22 @@
     return card;
   }
 
-  const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard };
+  function teamCard(item) {
+    const card = element('article', 'team-card');
+    const image = element('img');
+    image.src = item.poster;
+    image.alt = `Meet ${item.title} — team poster`;
+    image.loading = 'lazy';
+    image.width = 1080;
+    image.height = 1350;
+    const body = element('div', 'team-card-body');
+    body.append(element('h3', '', item.title), element('p', 'team-role', item.role),
+      element('p', 'team-summary', item.summary), action(item, 'team', `Meet ${item.title}`));
+    card.append(image, body);
+    return card;
+  }
+
+  const renderers = { patients: sealCard, releases: sealCard, updates: updateCard, actions: helpCard, team: teamCard };
   document.querySelectorAll('[data-cards]').forEach(container => {
     const collection = container.dataset.cards;
     if (collection === 'patients' || collection === 'releases') {

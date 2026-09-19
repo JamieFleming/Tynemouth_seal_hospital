@@ -4,6 +4,423 @@
  * The repeated seal profiles are editable placeholders from the design.
  */
 window.SealHospitalContent = {
+  about: [
+  {
+    "id": "behind-the-scenes",
+    "title": "Behind the scenes at the seal hospital",
+    "details": [
+      "Care at Tynemouth Seal Hospital is focused on helping rescued seals recover and return to the wild. The volunteer-led hospital opened at Tynemouth Aquarium in 2017."
+    ],
+    "sections": [
+      {
+        "title": "A quiet place to heal",
+        "paragraphs": [
+          "Patients need rest as well as treatment. Care takes place away from disturbance, with private spaces for seals that need them. Donated wetsuit material can provide comforting contact for young pups."
+        ]
+      },
+      {
+        "title": "Recovery at their own pace",
+        "paragraphs": [
+          "Injuries, infections and entanglement can bring seals into care. Some need weeks or months to recover. Feeding and rehabilitation help prepare them for an independent life again."
+        ]
+      },
+      {
+        "title": "Preparing for release",
+        "paragraphs": [
+          "Recovering seals may swim together before release. Human contact is limited so they do not become dependent on people for food."
+        ]
+      },
+      {
+        "title": "Keeping track of former patients",
+        "paragraphs": [
+          "Flipper tags help identify released seals and connect them with their medical records if they need treatment again."
+        ]
+      }
+    ]
+  }
+],
+  team: [
+  {
+    "id": "richard_poster",
+    "title": "Richard",
+    "role": "Chairperson and volunteer lead",
+    "poster": "Images/richard_poster.jpg",
+    "summary": "Seeing a pup recover against the odds and return to the wild.",
+    "details": [
+      "Richard values working with a team who share the same goal: giving seals another chance in the wild."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Working as a paramedic."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "He has a tattoo in memory of a humpback whale from his first whale rescue in 2006."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Humpback whales"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Richard",
+    "posters": [
+      {
+        "src": "Images/richard_poster.jpg",
+        "alt": "Meet the team poster for Richard. Its profile information is also provided as readable text above.",
+        "caption": "Richard — chairperson and volunteer lead."
+      }
+    ]
+  },
+  {
+    "id": "alan",
+    "title": "Alan",
+    "role": "Volunteer",
+    "poster": "Images/alan.jpg",
+    "summary": "Seeing photographs of released seals thriving back in the wild.",
+    "details": [
+      "Alan loves receiving updates and photographs of seals the hospital has released, showing them enjoying life at sea."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Teaching Religious Studies."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "He runs five marathons a year."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Orcas"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Alan",
+    "posters": [
+      {
+        "src": "Images/alan.jpg",
+        "alt": "Meet the team poster for Alan. Its profile information is also provided as readable text above.",
+        "caption": "Alan — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "becky",
+    "title": "Becky",
+    "role": "Volunteer",
+    "poster": "Images/becky.jpg",
+    "summary": "Watching a seal eat a fish by itself for the first time.",
+    "details": [
+      "For Becky, one of the most rewarding moments is seeing seals learn to feed independently."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Researching gut bacteria."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "She has dual British and South African citizenship."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Mudskippers"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Becky",
+    "posters": [
+      {
+        "src": "Images/becky.jpg",
+        "alt": "Meet the team poster for Becky. Its profile information is also provided as readable text above.",
+        "caption": "Becky — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "cally",
+    "title": "Cally",
+    "role": "Volunteer",
+    "poster": "Images/cally.jpg",
+    "summary": "Helping seals return to the wild and making friendships along the way.",
+    "details": [
+      "Cally loves being part of each seal’s journey back to the wild, as well as the friendships she has made with the team."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Looking after dogs and taking part in ocean and wildlife adventures."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "She lived in Oman for five years."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Humpback whales"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Cally",
+    "posters": [
+      {
+        "src": "Images/cally.jpg",
+        "alt": "Meet the team poster for Cally. Its profile information is also provided as readable text above.",
+        "caption": "Cally — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "dan",
+    "title": "Dan",
+    "role": "Volunteer",
+    "poster": "Images/dan.jpg",
+    "summary": "Seeing the team’s hard work pay off on release day.",
+    "details": [
+      "Dan enjoys the calm of the hospital after a busy shift at work, and seeing the results of everyone’s care when a seal is released."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Working as a relief bus depot operations supervisor, 3D printing or diving."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "He makes thumb guards used for feeding seal pups from recycled plastic bottles."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Orcas"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Dan",
+    "posters": [
+      {
+        "src": "Images/dan.jpg",
+        "alt": "Meet the team poster for Dan. Its profile information is also provided as readable text above.",
+        "caption": "Dan — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "grace",
+    "title": "Grace",
+    "role": "Volunteer",
+    "poster": "Images/grace.jpg",
+    "summary": "Discovering the seals’ different personalities and funny habits.",
+    "details": [
+      "Grace loves seeing each seal’s personality and what they get up to when they think nobody is watching."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Working for environmental causes, spending time on the beach or making music."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "She has a scuba-diving qualification."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Green sea turtles"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Grace",
+    "posters": [
+      {
+        "src": "Images/grace.jpg",
+        "alt": "Meet the team poster for Grace. Its profile information is also provided as readable text above.",
+        "caption": "Grace — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "karen",
+    "title": "Karen",
+    "role": "Volunteer",
+    "poster": "Images/karen.jpg",
+    "summary": "Working with seals, watching releases and meeting inspiring people.",
+    "details": [
+      "Karen describes working with the seals and watching releases as good for the soul. She also values the interesting people she has met through the hospital."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "In the studio, at markets or teaching as a glass artist."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "She takes part in English Civil War reenactments as a lieutenant."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Octopuses"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Karen",
+    "posters": [
+      {
+        "src": "Images/karen.jpg",
+        "alt": "Meet the team poster for Karen. Its profile information is also provided as readable text above.",
+        "caption": "Karen — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "kate",
+    "title": "Kate",
+    "role": "Volunteer",
+    "poster": "Images/kate.jpg",
+    "summary": "The reward of seeing seals go free after caring for them.",
+    "details": [
+      "Kate finds release days especially rewarding after spending so much time caring for the seals. She also enjoys meeting like-minded people."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Working for another charity, swimming or paddleboarding in the sea."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "She holds a black belt in karate and has climbed Kilimanjaro."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Hector’s dolphins"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Kate",
+    "posters": [
+      {
+        "src": "Images/kate.jpg",
+        "alt": "Meet the team poster for Kate. Its profile information is also provided as readable text above.",
+        "caption": "Kate — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "mark",
+    "title": "Mark",
+    "role": "Volunteer",
+    "poster": "Images/mark.jpg",
+    "summary": "The moment a rescued seal starts feeding and gaining weight.",
+    "details": [
+      "For Mark, seeing a seal begin to feed properly and gain weight is the sign that it has turned a corner."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Wildlife spotting and photography on the North East coast, and scuba diving."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "He named the first seal he rescued in 2013 Robbie, after the German word for seal, Robbe."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Bottlenose dolphins"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Mark",
+    "posters": [
+      {
+        "src": "Images/mark.jpg",
+        "alt": "Meet the team poster for Mark. Its profile information is also provided as readable text above.",
+        "caption": "Mark — volunteer."
+      }
+    ]
+  },
+  {
+    "id": "wendy",
+    "title": "Wendy",
+    "role": "Volunteer",
+    "poster": "Images/wendy.jpg",
+    "summary": "Feeding the pups and filling their pens, especially for Minnie.",
+    "details": [
+      "Wendy particularly enjoys feeding the pups and filling their pens. Her poster gives a special mention to her favourite seal, Minnie."
+    ],
+    "sections": [
+      {
+        "title": "Away from the hospital",
+        "paragraphs": [
+          "Sea swimming or walking her Tibetan Terrier, Dalha."
+        ]
+      },
+      {
+        "title": "Something you might not know",
+        "paragraphs": [
+          "She used to be a water-skiing instructor in the USA."
+        ]
+      },
+      {
+        "title": "Another wildlife favourite",
+        "paragraphs": [
+          "Puffins"
+        ]
+      }
+    ],
+    "postersTitle": "Meet Wendy",
+    "posters": [
+      {
+        "src": "Images/wendy.jpg",
+        "alt": "Meet the team poster for Wendy. Its profile information is also provided as readable text above.",
+        "caption": "Wendy — volunteer."
+      }
+    ]
+  }
+],
 	donations: { justGivingUrl: "https://www.justgiving.com/charity/tynemouthsealhospital" },
 	// Leave posts empty for the live Page timeline. For three selected embeds,
 	// paste up to three public post URLs here, newest first. They do not auto-update.

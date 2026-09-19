@@ -1120,3 +1120,101 @@ body:has(dialog[open]) {
 .justgiving-note { margin: 20px 0 10px; color: var(--pale); font-size: 14px; }
 .justgiving-note a { text-decoration: underline; text-underline-offset: 3px; }
 .justgiving-note a:focus-visible { outline-color: var(--white); }
+
+/* About page — shared brand, spacious editorial sections and reusable team cards. */
+.about-hero { background: linear-gradient(115deg, var(--deep), var(--teal)); color: var(--pale); padding: 64px 0; }
+.about-hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+.about-hero-copy .eyebrow { color: var(--mint); }
+.about-hero h1 { font-size: clamp(44px, 5vw, 72px); letter-spacing: -2px; line-height: 1.08; font-weight: 800; }
+.about-hero h1 span { color: var(--mint); }
+.about-hero-copy > p:not(.eyebrow) { font-size: 18px; max-width: 480px; margin: 24px 0; }
+.about-hero-photo { margin: 0; position: relative; }
+.about-hero-photo img { width: 100%; height: 450px; object-fit: cover; border-radius: 120px 24px 24px 24px; }
+.about-hero-photo figcaption { margin-top: 12px; font-size: 12px; color: var(--mint); }
+.about-jump-links { border-bottom: 1px solid var(--line); background: var(--pale); }
+.about-jump-links .container { display: flex; justify-content: center; gap: 42px; flex-wrap: wrap; }
+.about-jump-links a { padding: 18px 0; font-size: 14px; font-weight: 700; color: var(--deep); }
+.about-jump-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.about-intro-grid, .about-partners, .about-faq-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
+.about-page h2 { line-height: 1.2; }
+.about-lead { margin-top: 22px; font-size: 20px; line-height: 1.6; max-width: 420px; color: var(--slate); }
+.about-copy { max-width: 660px; }
+.about-copy p + p { margin-top: 18px; }
+.about-copy .text-link { margin-top: 22px; min-height: 44px; }
+.about-care, .about-faq { background: var(--pale); }
+.about-page .section-heading > p:not(.eyebrow) { color: var(--slate); max-width: 620px; }
+.about-care-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
+.care-number { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--white); color: var(--ocean); font-weight: 800; margin-bottom: 18px; }
+.about-care-grid h3 { margin-bottom: 14px; font-size: 20px; }
+.about-care-grid p { font-size: 15px; color: var(--slate); }
+.about-source { text-align: center; margin-top: 32px; font-size: 13px; color: var(--slate); }
+.about-source a, .about-faq a:not(.text-link) { text-decoration: underline; text-underline-offset: 3px; }
+.about-success { background: var(--sand); }
+.about-success-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: center; }
+.about-success-grid > img { width: 100%; height: 370px; object-fit: cover; border-radius: 18px; }
+.about-success h2 { margin-bottom: 24px; }
+.about-success .button { margin-top: 25px; }
+.team-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+.team-card { min-width: 0; background: var(--white); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+.team-card > img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; background: var(--pale); }
+.team-card-body { padding: 19px 16px 12px; display: flex; flex-direction: column; flex: 1; }
+.team-card h3 { font-size: 22px; }
+.team-card .team-role { color: var(--ocean); font-size: 12px; line-height: 1.4; margin: 7px 0 12px; font-weight: 700; }
+.team-summary { font-size: 14px; line-height: 1.55; color: var(--slate); margin: 0 0 16px; }
+.team-card .text-link { min-height: 44px; margin-top: auto; }
+.about-faq details { border-bottom: 1px solid #b2cec8; padding: 18px 0; }
+.about-faq details:first-child { padding-top: 0; }
+.about-faq summary { font-family: var(--font-heading); font-weight: 700; color: var(--deep); cursor: pointer; padding: 8px 0; }
+.about-faq summary:focus-visible { outline: 3px solid var(--ocean); outline-offset: 4px; }
+.about-faq details p { margin-top: 16px; }
+.about-faq .text-link { margin-top: 12px; min-height: 44px; }
+.about-support { background: linear-gradient(110deg, var(--deep), var(--teal)); color: var(--pale); text-align: center; }
+.about-support .eyebrow { color: var(--mint); }
+.about-support h2 { color: var(--white); }
+.about-support p:not(.eyebrow) { margin: 18px 0 28px; }
+.about-support .button-row { justify-content: center; }
+@media (max-width: 1150px) {
+ .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+ .about-hero-grid, .about-intro-grid, .about-partners, .about-faq-grid { gap: 40px; }
+}
+@media (max-width: 900px) {
+ .about-hero { padding: 44px 0; }
+ .about-hero-grid { gap: 30px; }
+ .about-hero-photo img { height: 380px; border-top-left-radius: 70px; }
+ .about-hero .button-row { flex-wrap: wrap; }
+ .about-care-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+ .about-success-grid { gap: 30px; }
+ .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+ .about-hero-grid, .about-intro-grid, .about-partners, .about-success-grid, .about-faq-grid { grid-template-columns: 1fr; gap: 28px; }
+ .about-hero h1 { font-size: 48px; }
+ .about-hero-copy > p:not(.eyebrow) { font-size: 16px; }
+ .about-hero .button { flex: 1; padding: 12px; }
+ .about-hero-photo img { height: 310px; border-radius: 70px 18px 18px 18px; }
+ .about-jump-links .container { gap: 0 24px; }
+ .about-jump-links a { padding: 12px 0; font-size: 12px; }
+ .about-lead { font-size: 18px; }
+ .about-care-grid { grid-template-columns: 1fr; gap: 28px; }
+ .about-care-grid article { padding-left: 65px; position: relative; }
+ .care-number { position: absolute; top: 0; left: 0; }
+ .about-success-grid > img { height: 280px; }
+ .team-grid { gap: 14px; }
+ .team-card-body { padding: 14px 12px 8px; }
+ .team-card h3 { font-size: 20px; }
+ .team-summary { font-size: 13px; }
+ .team-card .team-role { font-size: 11px; }
+ .team-card .text-link { font-size: 12px; }
+ .about-support .button-row { flex-direction: column; }
+}
+@media (max-width: 360px) {
+ .team-grid { grid-template-columns: 1fr; }
+ .team-card { max-width: 280px; margin-inline: auto; }
+}
+
+.site-footer .footer-charity { margin-top: 18px; font-size: 12px; }
+
+.about-faq .button { margin-top: 18px; text-decoration: none; }
+.faq-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.about-faq .faq-actions .text-link { margin-top: 18px; }
+@media (max-width: 640px) { .faq-actions .button { width: 100%; } }

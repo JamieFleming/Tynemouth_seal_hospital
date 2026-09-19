@@ -87,3 +87,18 @@ Updates can include `sections` (each with `title`, optional `paragraphs`, and op
 ### Homepage limits and full seal collections
 
 Homepage patient/release containers use `data-limit="3"` and show the first three records in their existing content order. One or two cards are centred on desktop at the usual three-column card width. The homepage buttons link to `seals.html`, which renders every patient and release from the same content file and supports the same story dialogs and galleries. Its mobile view stacks all profiles for browsing. Keep both pages and their versioned CSS/JS references updated when deploying changes.
+
+## About Us page
+
+`about.html` shares the site's header, footer, fonts, palette and modal system. It includes the hospital's story, care journey, partnerships, Isla's success story, ten team profiles, FAQs and support links. About Us links on the homepage and seal directory now open this page.
+
+Team profiles live in `team` in `js/content.js`. Each uses `id`, `title` (the person's display name), `role`, `poster`, `summary`, `details`, `sections` and `posters`. `teamCard` in `js/components.js` renders every team member consistently. Copy or remove a profile object to add or remove a person. All information from the supplied posters is available as readable modal text, with the original poster linked at full size. No new roles were inferred beyond Richard's supplied chairperson/volunteer-lead description and the other team members' volunteer profiles.
+
+Hospital information was checked against:
+- https://www.tynemouthaquarium.co.uk/discover/exhibits/seal-hospital/
+- https://www.tynemouthaquarium.co.uk/blog/animal-stories/seal-hospital-behind-the-scenes/
+- https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5191750
+
+The two Aquarium pages give different pen counts, so capacity is not stated. Dated rescue totals and current staffing totals are also omitted. Team biographical information comes from the supplied posters; the Isla account comes from the supplied story. Source links are included in the relevant About page sections.
+
+Validation: all three pages initialise without script errors in DOM checks; all ten team modals display their text and posters; image paths, navigation/fragment links, menu behaviour and CSS parsing pass. Browser visual verification was not available in this session.
