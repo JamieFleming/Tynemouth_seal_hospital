@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jamiefleming.github.io/Tynemouth_seal_hospital/sitemap.xml
