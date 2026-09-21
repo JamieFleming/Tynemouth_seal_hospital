@@ -137,7 +137,7 @@
       submitting = false;
       form.removeAttribute("aria-busy");
       button.disabled = false;
-      button.textContent = "Send enquiry →";
+      button.textContent = "Send enquiry";
       status.focus();
     }
   });

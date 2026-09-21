@@ -968,7 +968,8 @@ window.SealHospitalContent = {
       ],
       source: {
         url: "https://www.amazon.co.uk/Selfie-Seal-Alison-Pake/dp/B0FCBFM9RQ",
-        label: "View The Selfie Seal on Amazon ↗",
+        label: "View The Selfie Seal on Amazon",
+        prominent: true,
       },
       postersTitle: "The Selfie Seal",
       posters: [

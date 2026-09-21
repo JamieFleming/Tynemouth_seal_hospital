@@ -90,8 +90,8 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.textContent = isCurated
-        ? "View this post on Facebook ↗"
-        : "View the Page on Facebook ↗";
+        ? "View this post on Facebook"
+        : "View the Page on Facebook";
       panel.append(frame, link);
       container.append(panel);
       return { panel, frame, url, width: 0 };

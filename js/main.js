@@ -112,7 +112,9 @@
       );
       if (item.source) {
         const source = document.createElement("a");
-        source.className = "profile-source";
+        source.className = item.source.prominent
+          ? "button button-coral"
+          : "profile-source";
         source.href = item.source.url;
         source.target = "_blank";
         source.rel = "noopener noreferrer";
@@ -244,7 +246,7 @@
           link.href = url.href;
           link.target = "_blank";
           link.rel = "noopener noreferrer";
-          link.textContent = "▶ Watch on Facebook ↗";
+          link.textContent = " Watch on Facebook";
           link.setAttribute(
             "aria-label",
             `${video.title} on Facebook (opens in a new tab)`,
@@ -287,7 +289,7 @@
     link.href = window.SealHospitalContent.donations.justGivingUrl;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "Continue to JustGiving ↗";
+    link.textContent = "Continue to JustGiving";
     link.setAttribute(
       "aria-label",
       "Continue to JustGiving (opens in a new tab)",
