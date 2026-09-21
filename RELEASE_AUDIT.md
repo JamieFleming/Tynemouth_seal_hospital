@@ -71,3 +71,15 @@ Optional embeds remain blocked by default. More explicit load notices link to Co
 Added a noindex 404.html excluded from the sitemap, with homepage/contact routes and urgent seal advice. Its base URL is /Tynemouth_seal_hospital/ so assets and links work on nested missing paths at GitHub Pages. Update that base if deploying at a custom domain root. Publish 404.html in the actual Pages publishing root; a generic local server may need its own 404 configuration. This handles missing pages, not all possible service errors.
 
 Sources reviewed: [ICO privacy-information requirements](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-be-informed/), [ICO cookie consent guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/how-do-we-manage-consent-in-practice/), [ICO international transfers](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/), [Formspree privacy policy](https://formspree.io/legal/privacy-policy/), and [GitHub custom 404 instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site).
+
+## Desktop footer spacing
+
+Compacted footer padding, column gaps, logo spacing and copyright separation. Quick links use 32px rows only above 1000px with a fine pointer and hover; touch layouts retain 44px targets. This intentionally supersedes the earlier all-device 44px footer statement. The browser target check reflects this desktop-only exception.
+
+## Brighter coral buttons
+
+Primary coral buttons now use #EC6048 with white 19px, 700-weight labels, providing approximately 3.32:1 contrast for large bold text. The larger label treatment is required for this brighter colour; do not reduce it to small text without revisiting contrast. Existing darker tokens remain for small selected amount labels and form errors. High-contrast mode retains its yellow/black overrides.
+
+The later button typography revision removes the 19px override and restores the shared button sizes. Coral returns to #C94B35 for readable small white labels; this supersedes the brighter-coral note above.
+
+Latest visual preference: bright #EC6048 coral restored with the existing smaller white button typography. White text contrast is approximately 3.32:1, below the 4.5:1 AA requirement for normal-sized text; the earlier default-mode contrast pass no longer applies to these buttons. High-contrast mode retains its yellow/black treatment, but does not establish default-mode conformance.

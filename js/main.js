@@ -1,6 +1,15 @@
 (() => {
   "use strict";
   document.documentElement.classList.remove("no-js");
+  const contrastKey = "seal-hospital-high-contrast";
+  try {
+    document.documentElement.classList.toggle(
+      "high-contrast",
+      localStorage.getItem(contrastKey) === "true",
+    );
+  } catch {
+    /* The control still works when browser storage is unavailable. */
+  }
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector("#navigation");
   menuButton.addEventListener("click", () => {
@@ -270,6 +279,32 @@
       showDetail(policies[button.dataset.policy][0], [
         policies[button.dataset.policy][1],
       ]);
+      const setting = document.createElement("section");
+      setting.className = "contrast-setting";
+      const description = document.createElement("p");
+      description.textContent =
+        "High contrast uses black surfaces, white text and yellow primary buttons. Your choice is saved on this browser until you change it or clear site data. Photos and external content keep their original colours.";
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "button button-slate";
+      toggle.textContent = "High contrast mode";
+      toggle.setAttribute(
+        "aria-pressed",
+        String(document.documentElement.classList.contains("high-contrast")),
+      );
+      toggle.addEventListener("click", () => {
+        const enabled =
+          document.documentElement.classList.toggle("high-contrast");
+        toggle.setAttribute("aria-pressed", String(enabled));
+        try {
+          if (enabled) localStorage.setItem(contrastKey, "true");
+          else localStorage.removeItem(contrastKey);
+        } catch {
+          /* Do not prevent changes in private/restricted browsers. */
+        }
+      });
+      setting.append(description, toggle);
+      document.querySelector("#dialog-content").append(setting);
     }
   });
   // Future checkout integration belongs here; no payment is taken on this site.
