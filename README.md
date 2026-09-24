@@ -90,3 +90,9 @@ Hospital contact information: [Charity Commission](https://register-of-charities
 On the current GitHub Pages project URL, `Website/robots.txt` is published in a subdirectory. Crawlers only apply robots rules from the origin root (`https://jamiefleming.github.io/robots.txt`). Deploy the file at that root if you control it, or use it when moving to a custom domain. Submit the project’s `sitemap.xml` directly in Search Console. The project copy alone does not control crawling of the parent domain.
 
 External map/feed content loads only after a visitor chooses to connect. Inline links within paragraphs remain inline; standalone navigation, buttons, selects, disclosures and action links use at least 44 × 44 CSS-pixel targets. This avoids disrupting reading flow while meeting the requested touch-target treatment for controls.
+
+## Growing the content
+
+The homepage shows the newest four updates. The Updates page reveals older updates four at a time with **Show more updates**. The control only appears when there are more than four records. Add `pills: ["Under care"]` to a seal to display additional plain-text labels; species and sex remain separate fields. Humour entries support `readLabel` and may omit their posters array. Run `node tests/content-growth.mjs` to check growing and empty collections without changing production data.
+
+The recommended client CMS and migration plan is documented in `../CMS_PLAN.md`. No client login or CMS connection is installed yet.

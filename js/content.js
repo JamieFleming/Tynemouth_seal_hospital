@@ -7,6 +7,7 @@ window.SealHospitalContent = {
   fun: [
     {
       id: "life-advice",
+      readLabel: "Read the seal advice",
       title: "Life advice from our seals",
       summary:
         "Take it easy, find your comfortable spot and make plenty of time for lounging. Our seals have a few thoughts on life.",

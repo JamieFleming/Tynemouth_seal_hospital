@@ -64,8 +64,24 @@
     const body = element("div");
     const tags = element("p", "tags");
     const sexClass = { Female: "female", Male: "male" }[item.sex] || "";
-    tags.append(element("span", "", item.species));
+    if (item.species) tags.append(element("span", "", item.species));
     if (item.sex) tags.append(element("span", sexClass, item.sex));
+    // Extra editorial labels are plain text; colour and layout stay controlled.
+    const usedLabels = new Set(
+      [item.species, item.sex]
+        .filter(Boolean)
+        .map((label) => label.toLowerCase()),
+    );
+    (item.pills || []).forEach((label) => {
+      if (
+        typeof label !== "string" ||
+        !label.trim() ||
+        usedLabels.has(label.trim().toLowerCase())
+      )
+        return;
+      usedLabels.add(label.trim().toLowerCase());
+      tags.append(element("span", "", label.trim()));
+    });
     body.append(
       element("h3", "", item.name),
       tags,
@@ -200,22 +216,25 @@
 
   function funCard(item) {
     const card = element("article", "fun-card");
-    const image = element("img");
-    image.src = item.posters[0].src;
-    image.alt = item.posters[0].alt;
-    image.loading = "lazy";
-    image.width = 1080;
-    image.height = 1350;
+    const cover = item.posters?.[0];
+    let image;
+    if (cover) {
+      image = element("img");
+      image.src = cover.src;
+      image.alt = cover.alt || item.title;
+      image.loading = "lazy";
+      image.width = cover.width || 1080;
+      image.height = cover.height || 1350;
+    } else {
+      card.classList.add("fun-card-text-only");
+    }
     const body = element("div");
     body.append(element("h3", "", item.title), element("p", "", item.summary));
-    const control = action(
-      item,
-      "fun",
-      item.id === "life-advice" ? "Read the seal advice" : "See all six signs",
-    );
+    const control = action(item, "fun", item.readLabel || "Read more");
     control.className = "button button-slate";
     body.append(control);
-    card.append(image, body);
+    if (image) card.append(image);
+    card.append(body);
     return card;
   }
 
@@ -238,7 +257,7 @@
         `${collection === "patients" ? "Current patients" : "Released seals"} — scroll for more seals`,
       );
     }
-    let records = content[collection];
+    let records = content[collection] || [];
     if (container.dataset.records) {
       records = container.dataset.records
         .split(",")
@@ -251,8 +270,13 @@
       );
     }
     const limit = Number.parseInt(container.dataset.limit, 10);
+    const pageSize = Number.parseInt(container.dataset.pageSize, 10);
+    const paginated = Number.isInteger(pageSize) && pageSize > 0;
+    const visibleLimit = paginated ? pageSize : limit;
     const items =
-      Number.isInteger(limit) && limit > 0 ? records.slice(0, limit) : records;
+      Number.isInteger(visibleLimit) && visibleLimit > 0
+        ? records.slice(0, visibleLimit)
+        : records;
     container.style.setProperty(
       "--card-count",
       String(Math.max(1, Math.min(items.length, 3))),
@@ -262,5 +286,54 @@
         renderers[collection](item, collection, container.dataset.variant),
       ),
     );
+    if (!records.length) {
+      container.append(
+        element(
+          "p",
+          "content-empty",
+          collection === "updates"
+            ? "There are no updates to show yet. Please check back soon."
+            : "There are no entries to show at the moment.",
+        ),
+      );
+    }
+    if (paginated && records.length > items.length) {
+      const controls = element("div", "section-action updates-pagination");
+      const more = element(
+        "button",
+        "button button-slate",
+        "Show more updates",
+      );
+      more.type = "button";
+      more.setAttribute("aria-controls", container.id);
+      const status = element("p", "updates-count");
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      let shown = items.length;
+      const updateCount = () => {
+        status.textContent = `Showing ${shown} of ${records.length} updates`;
+      };
+      updateCount();
+      more.addEventListener("click", () => {
+        const next = records
+          .slice(shown, shown + pageSize)
+          .map((item) =>
+            renderers[collection](item, collection, container.dataset.variant),
+          );
+        container.append(...next);
+        shown += next.length;
+        updateCount();
+        // Keep keyboard readers at the first newly revealed article.
+        const heading = next[0]?.querySelector("h3");
+        if (heading) {
+          heading.tabIndex = -1;
+          heading.focus({ preventScroll: true });
+          heading.scrollIntoView({ block: "nearest", behavior: "instant" });
+        }
+        if (shown === records.length) more.remove();
+      });
+      controls.append(more, status);
+      container.after(controls);
+    }
   });
 })();

@@ -83,3 +83,5 @@ Primary coral buttons now use #EC6048 with white 19px, 700-weight labels, provid
 The later button typography revision removes the 19px override and restores the shared button sizes. Coral returns to #C94B35 for readable small white labels; this supersedes the brighter-coral note above.
 
 Latest visual preference: bright #EC6048 coral restored with the existing smaller white button typography. White text contrast is approximately 3.32:1, below the 4.5:1 AA requirement for normal-sized text; the earlier default-mode contrast pass no longer applies to these buttons. High-contrast mode retains its yellow/black treatment, but does not establish default-mode conformance.
+
+Owner verification (21 September 2026): user confirms Formspree works and reports successful use on their phone, laptop and iPad. This closes the previously outstanding owner Formspree-delivery/device smoke-check items; it is not an assistive-technology or full cross-browser certification.

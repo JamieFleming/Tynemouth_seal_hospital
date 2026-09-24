@@ -3758,3 +3758,20 @@ html.high-contrast .contrast-setting button[aria-pressed="true"] {
 .button-coral {
   box-shadow: 0 3px 8px rgb(7 59 69 / 12%);
 }
+
+.updates-pagination .updates-count {
+  margin-top: 12px;
+  color: var(--slate);
+  font-size: 14px;
+}
+.fun-card.fun-card-text-only {
+  grid-template-columns: 1fr;
+}
+.content-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.tags span {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
